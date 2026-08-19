@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Filter, ArrowUpDown } from 'lucide-react';
+import React from 'react';
+import { Filter } from 'lucide-react';
 
 export function Screener() {
   const stocks = [
@@ -14,18 +14,18 @@ export function Screener() {
   ];
 
   return (
-    <div className="bg-[#0C1118] border border-[#202B38] rounded-xl p-4 shadow-lg space-y-4 font-mono text-xs tabular-nums">
-      <div className="flex justify-between items-center border-b border-[#202B38] pb-3">
-        <h2 className="text-sm font-bold text-white flex items-center gap-2">
+    <div className="cs-card border rounded-xl p-4 shadow-lg space-y-4 font-mono text-xs tabular-nums">
+      <div className="flex justify-between items-center border-b cs-border pb-3">
+        <h2 className="text-sm font-bold flex items-center gap-2">
           <Filter className="w-4 h-4 text-[#4DA3FF]" /> Institutional Market Screener
         </h2>
-        <span className="text-2xs text-slate-400 font-sans">Multi-variable Equity Filter</span>
+        <span className="text-2xs cs-text-sub font-sans">Multi-variable Equity Filter</span>
       </div>
 
       <div className="overflow-x-auto">
         <table className="w-full text-left">
           <thead>
-            <tr className="bg-[#070A0F] text-slate-400 text-3xs uppercase border-b border-[#202B38]">
+            <tr className="cs-topbar cs-text-sub text-3xs uppercase border-b cs-border">
               <th className="py-2.5 px-3">Symbol</th>
               <th className="py-2.5 px-3">Company Name</th>
               <th className="py-2.5 px-3">Sector</th>
@@ -35,20 +35,20 @@ export function Screener() {
               <th className="py-2.5 px-3">P/E</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#202B38]">
+          <tbody className="divide-y cs-border">
             {stocks.map((stock) => {
               const isPos = stock.change >= 0;
               return (
-                <tr key={stock.symbol} className="hover:bg-[#151D29] transition">
-                  <td className="py-3 px-3 font-bold text-white">{stock.symbol}</td>
-                  <td className="py-3 px-3 text-slate-300 font-sans text-2xs">{stock.name}</td>
+                <tr key={stock.symbol} className="hover:bg-slate-500/10 transition">
+                  <td className="py-3 px-3 font-bold">{stock.symbol}</td>
+                  <td className="py-3 px-3 cs-text-sub font-sans text-2xs">{stock.name}</td>
                   <td className="py-3 px-3 text-[#4DA3FF] font-sans text-2xs">{stock.sector}</td>
-                  <td className="py-3 px-3 font-bold text-white">₹{stock.price.toLocaleString('en-IN')}</td>
+                  <td className="py-3 px-3 font-bold">₹{stock.price.toLocaleString('en-IN')}</td>
                   <td className={`py-3 px-3 font-bold ${isPos ? 'text-[#22C58B]' : 'text-[#F05252]'}`}>
                     {isPos ? '+' : ''}{stock.change}%
                   </td>
-                  <td className="py-3 px-3 text-slate-400">{stock.volume}</td>
-                  <td className="py-3 px-3 text-slate-300">{stock.pe}</td>
+                  <td className="py-3 px-3 cs-text-sub">{stock.volume}</td>
+                  <td className="py-3 px-3 cs-text-sub">{stock.pe}</td>
                 </tr>
               );
             })}

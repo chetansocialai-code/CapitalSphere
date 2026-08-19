@@ -7,25 +7,25 @@ export function IPOCenter() {
   ];
 
   return (
-    <div className="bg-[#0C1118] border border-[#202B38] rounded-xl p-4 shadow-lg space-y-4 font-mono text-xs">
-      <div className="flex justify-between items-center border-b border-[#202B38] pb-3">
-        <h2 className="text-sm font-bold text-white uppercase tracking-wider">IPO Intelligence Center</h2>
+    <div className="cs-card border rounded-xl p-4 shadow-lg space-y-4 font-mono text-xs">
+      <div className="flex justify-between items-center border-b cs-border pb-3">
+        <h2 className="text-sm font-bold uppercase tracking-wider">IPO Intelligence Center</h2>
         <span className="text-3xs bg-[#4DA3FF]/10 text-[#4DA3FF] border border-[#4DA3FF]/30 px-2 py-0.5 rounded font-bold">LIVE TRACKER</span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {ipos.map((ipo) => (
-          <div key={ipo.name} className="bg-[#070A0F] border border-[#202B38] p-4 rounded-xl space-y-2">
+          <div key={ipo.name} className="cs-topbar border cs-border p-4 rounded-xl space-y-2">
             <div className="flex justify-between items-center">
-              <h3 className="font-bold text-white text-sm font-sans">{ipo.name}</h3>
+              <h3 className="font-bold text-sm font-sans">{ipo.name}</h3>
               <span className={`text-3xs font-bold px-2 py-0.5 rounded ${ipo.status === 'UPCOMING' ? 'bg-[#F2B84B]/10 text-[#F2B84B] border border-[#F2B84B]/30' : 'bg-[#22C58B]/10 text-[#22C58B] border border-[#22C58B]/30'}`}>
                 {ipo.status}
               </span>
             </div>
-            <div className="grid grid-cols-2 gap-2 text-2xs text-slate-400 pt-2 border-t border-[#202B38]/80 tabular-nums">
-              <div>Issue Size: <span className="text-white font-bold">{ipo.issueSize}</span></div>
-              <div>Price Band: <span className="text-white font-bold">{ipo.priceBand}</span></div>
-              <div>Open Date: <span className="text-white font-bold">{ipo.openDate}</span></div>
+            <div className="grid grid-cols-2 gap-2 text-2xs cs-text-sub pt-2 border-t cs-border tabular-nums">
+              <div>Issue Size: <span className="font-bold text-[#4DA3FF]">{ipo.issueSize}</span></div>
+              <div>Price Band: <span className="font-bold">{ipo.priceBand}</span></div>
+              <div>Open Date: <span className="font-bold">{ipo.openDate}</span></div>
               <div>GMP Estimate: <span className="text-[#22C58B] font-bold">{ipo.gmp}</span></div>
             </div>
           </div>
