@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { MarketTicker } from '@/components/MarketTicker';
@@ -9,6 +10,9 @@ export const metadata: Metadata = {
   title: 'CapitalSphere — Markets. Money. Business. Intelligence.',
   description: 'Enterprise Financial Intelligence Platform. Live stock quotes, Nifty 50, Option Chains, Upstox market streaming & business news.',
   keywords: 'Stock Market,Sensex,Nifty 50,Option Chain,Upstox V3,Financial News,IPO,CapitalSphere',
+  other: {
+    'google-adsense-account': 'ca-pub-2416474909531167',
+  },
 };
 
 export default function RootLayout({
@@ -18,6 +22,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2416474909531167"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="bg-[#070A0F] text-[#F4F7FA] min-h-screen flex flex-col font-sans antialiased">
         <Header />
         <MarketTicker />
