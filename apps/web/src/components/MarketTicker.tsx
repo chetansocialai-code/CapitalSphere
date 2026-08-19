@@ -22,7 +22,8 @@ export function MarketTicker() {
     { symbol: 'DOW JONES', ltp: 40820.10, change: -45.00, changePercent: -0.11, status: 'DELAYED' },
   ]);
 
-  const isLive = indices.some(i => i.status === 'LIVE');
+  const safeIndices = Array.isArray(indices) ? indices : [];
+  const isLive = safeIndices.some(i => i && i.status === 'LIVE');
 
   useEffect(() => {
     const fetchMarketQuotes = async () => {
@@ -30,10 +31,18 @@ export function MarketTicker() {
         const res = await fetch('http://localhost:4000/api/v1/markets/indices');
         const json = await res.json();
         if (json.success && json.data) {
-          setIndices(json.data);
+          if (Array.isArray(json.data)) {
+            setIndices(json.data);
+          } else if (json.data.indianIndices && Array.isArray(json.data.indianIndices)) {
+            const combined = [
+              ...json.data.indianIndices,
+              ...(Array.isArray(json.data.globalIndices) ? json.data.globalIndices : [])
+            ];
+            setIndices(combined);
+          }
         }
       } catch (err) {
-        // Fallback
+        // Retain baseline data on error
       }
     };
 
@@ -60,18 +69,23 @@ export function MarketTicker() {
       </div>
 
       <div className="flex items-center gap-6">
-        {indices.map((idx) => {
-          const isPositive = idx.change >= 0;
+        {safeIndices.map((idx) => {
+          if (!idx || !idx.symbol) return null;
+          const changeVal = typeof idx.change === 'number' ? idx.change : 0;
+          const changePct = typeof idx.changePercent === 'number' ? idx.changePercent : 0;
+          const ltpVal = typeof idx.ltp === 'number' ? idx.ltp : 0;
+          const isPositive = changeVal >= 0;
+
           return (
             <div key={idx.symbol} className="flex items-center gap-2 shrink-0 cs-card hover:bg-slate-500/10 px-2 py-0.5 rounded transition">
               <span className="cs-text-sub font-semibold">{idx.symbol}</span>
-              <span className="font-bold tabular-nums">{idx.ltp.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span>
+              <span className="font-bold tabular-nums">{ltpVal.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span>
               <span className={`flex items-center gap-0.5 font-semibold tabular-nums ${isPositive ? 'text-[#22C58B]' : 'text-[#F05252]'}`}>
                 {isPositive ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
-                {isPositive ? '+' : ''}{idx.change.toFixed(2)} ({isPositive ? '+' : ''}{idx.changePercent.toFixed(2)}%)
+                {isPositive ? '+' : ''}{changeVal.toFixed(2)} ({isPositive ? '+' : ''}{changePct.toFixed(2)}%)
               </span>
               <span className={`text-3xs px-1 rounded font-bold ${idx.status === 'LIVE' ? 'bg-[#22C58B]/10 text-[#22C58B] border border-[#22C58B]/30' : 'cs-topbar cs-text-sub'}`}>
-                {idx.status}
+                {idx.status || 'CLOSED'}
               </span>
             </div>
           );
