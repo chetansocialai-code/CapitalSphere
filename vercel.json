@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "name": "capitalsphere-web",
-  "buildCommand": "next build",
-  "outputDirectory": ".next",
+  "buildCommand": "npm install && npm run build --workspace=@capitalsphere/web",
+  "outputDirectory": "apps/web/.next",
   "framework": "nextjs",
   "installCommand": "npm install",
-  "regions": ["bom1"],
   "headers": [
     {
       "source": "/ads.txt",
