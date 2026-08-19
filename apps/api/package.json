@@ -2,11 +2,11 @@
   "name": "@capitalsphere/api",
   "version": "1.0.0",
   "private": true,
-  "main": "dist/main.js",
+  "main": "dist/server.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
-    "start": "node dist/main.js"
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "@capitalsphere/database": "1.0.0",
