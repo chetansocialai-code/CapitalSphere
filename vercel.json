@@ -1,6 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm run build --workspace=@capitalsphere/web",
+  "outputDirectory": "apps/web/.next",
   "framework": "nextjs",
   "headers": [
     {
