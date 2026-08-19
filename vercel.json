@@ -1,9 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "npm install && npm run build --workspace=@capitalsphere/web",
+  "buildCommand": "npm run build --workspace=@capitalsphere/web",
   "outputDirectory": "apps/web/.next",
   "framework": "nextjs",
-  "installCommand": "npm install",
   "headers": [
     {
       "source": "/ads.txt",
