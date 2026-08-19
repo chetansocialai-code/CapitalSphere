@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark Theme (Default - CapitalSphere Midnight Finance) */
+  --background: #070A0F;
+  --foreground: #F4F7FA;
+  --card: #0C1118;
+  --card-elevated: #151D29;
+  --card-foreground: #F4F7FA;
+  --border: #202B38;
+  --input: #202B38;
+  --ring: #4DA3FF;
+  --muted: #6F7A88;
+}
+
+html.light {
+  /* Light Theme (Newspaper & Business Publication Mode) */
+  --background: #F6F8FB;
+  --foreground: #10151D;
+  --card: #FFFFFF;
+  --card-elevated: #EDF2F7;
+  --card-foreground: #10151D;
+  --border: #DCE2EA;
+  --input: #DCE2EA;
+  --ring: #4DA3FF;
+  --muted: #6F7A88;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Tabular Numbers for all financial and market data */
+.tabular-nums, table, [data-numeric] {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Financial Terminal Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}

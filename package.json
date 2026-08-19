@@ -1,0 +1,30 @@
+{
+  "name": "capital-sphere",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CapitalSphere — Ultimate Production Financial Platform (Markets. Money. Business. Intelligence.)",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\" \"npm run dev:admin\"",
+    "dev:web": "npm run dev --workspace=@capitalsphere/web",
+    "dev:api": "npm run dev --workspace=@capitalsphere/api",
+    "dev:admin": "npm run dev --workspace=@capitalsphere/admin",
+    "build": "npm run build --workspaces --if-present",
+    "build:web": "npm run build --workspace=@capitalsphere/web",
+    "build:api": "npm run build --workspace=@capitalsphere/api",
+    "build:admin": "npm run build --workspace=@capitalsphere/admin",
+    "test": "npm run test --workspaces --if-present",
+    "start": "npm run start --workspace=@capitalsphere/web"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

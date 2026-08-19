@@ -1,0 +1,238 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  USER
+  EDITOR
+  ADMIN
+}
+
+enum ArticleStatus {
+  DRAFT
+  REVIEW
+  SCHEDULED
+  PUBLISHED
+  UNPUBLISHED
+  ARCHIVED
+}
+
+enum AlertCondition {
+  ABOVE
+  BELOW
+}
+
+enum IpoStatus {
+  UPCOMING
+  OPEN
+  CLOSED
+  LISTED
+}
+
+model User {
+  id           String         @id @default(uuid())
+  email        String         @unique
+  passwordHash String
+  name         String
+  role         Role           @default(USER)
+  avatarUrl    String?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  articles     Article[]      @relation("AuthorArticles")
+  watchlists   Watchlist[]
+  alerts       Alert[]
+  portfolios   Portfolio[]
+  savedArticles SavedArticle[]
+  auditLogs    AuditLog[]
+}
+
+model Category {
+  id          String    @id @default(uuid())
+  name        String
+  slug        String    @unique
+  description String?
+  articles    Article[]
+}
+
+model Tag {
+  id       String    @id @default(uuid())
+  name     String    @unique
+  slug     String    @unique
+  articles Article[]
+}
+
+model Article {
+  id             String        @id @default(uuid())
+  title          String
+  slug           String        @unique
+  excerpt        String
+  content        String        @db.Text
+  featuredImage  String
+  categoryId     String
+  category       Category      @relation(fields: [categoryId], references: [id])
+  authorId       String
+  author         User          @relation("AuthorArticles", fields: [authorId], references: [id])
+  sourceName     String
+  sourceUrl      String
+  publishedAt    DateTime      @default(now())
+  status         ArticleStatus @default(DRAFT)
+  seoTitle       String
+  seoDescription String
+  canonicalUrl   String
+  readingTime    Int           @default(3)
+  keyTakeaways   String[]
+  tickers        String[]
+  isResearch     Boolean       @default(false)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  savedByUsers   SavedArticle[]
+  tags           Tag[]
+
+  @@index([slug])
+  @@index([publishedAt])
+  @@index([status])
+}
+
+model SavedArticle {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  articleId String
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  savedAt   DateTime @default(now())
+
+  @@unique([userId, articleId])
+}
+
+model Company {
+  id          String   @id @default(uuid())
+  name        String
+  symbol      String   @unique
+  slug        String   @unique
+  exchange    String   @default("NSE")
+  sector      String
+  industry    String?
+  description String?  @db.Text
+  marketCap   Float
+  peRatio     Float?
+  pbRatio     Float?
+  divYield    Float?
+  eps         Float?
+  bookValue   Float?
+  week52High  Float
+  week52Low   Float
+  updatedAt   DateTime @updatedAt
+}
+
+model Instrument {
+  id            String   @id @default(uuid())
+  symbol        String   @unique
+  name          String
+  exchange      String
+  instrumentKey String?
+  type          String   @default("EQUITY")
+}
+
+model Ipo {
+  id                String    @id @default(uuid())
+  slug              String    @unique
+  companyName       String
+  symbol            String?
+  issueSize         String
+  priceBand         String
+  lotSize           Int
+  openDate          DateTime
+  closeDate         DateTime
+  listingDate       DateTime?
+  status            IpoStatus @default(UPCOMING)
+  gmp               String?
+  subscriptionTimes Float?
+  summary           String?   @db.Text
+  createdAt         DateTime  @default(now())
+}
+
+model Watchlist {
+  id        String          @id @default(uuid())
+  userId    String
+  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String
+  symbols   String[]
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+}
+
+model Alert {
+  id              String         @id @default(uuid())
+  userId          String
+  user            User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  symbol          String
+  condition       AlertCondition
+  targetPrice     Float
+  active          Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+  lastTriggeredAt DateTime?
+  histories       AlertHistory[]
+}
+
+model AlertHistory {
+  id          String   @id @default(uuid())
+  alertId     String
+  alert       Alert    @relation(fields: [alertId], references: [id], onDelete: Cascade)
+  symbol      String
+  triggerPrice Float
+  triggeredAt DateTime @default(now())
+}
+
+model Portfolio {
+  id        String          @id @default(uuid())
+  userId    String
+  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String          @default("My Portfolio")
+  items     PortfolioItem[]
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+}
+
+model PortfolioItem {
+  id          String    @id @default(uuid())
+  portfolioId String
+  portfolio   Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+  symbol      String
+  quantity    Float
+  buyPrice    Float
+  buyDate     DateTime  @default(now())
+}
+
+model NewsletterSubscriber {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  dailyBrief   Boolean  @default(true)
+  weeklyBrief  Boolean  @default(true)
+  subscribedAt DateTime @default(now())
+}
+
+model Advertisement {
+  id        String   @id @default(uuid())
+  title     String
+  placement String   // e.g. HEADER, SIDEBAR, INLINE, FOOTER
+  imageUrl  String
+  targetUrl String
+  active    Boolean  @default(true)
+  impressions Int    @default(0)
+  clicks      Int    @default(0)
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  details   String   @db.Text
+  ipAddress String?
+  createdAt DateTime @default(now())
+}
