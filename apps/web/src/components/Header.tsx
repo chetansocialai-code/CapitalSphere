@@ -98,11 +98,11 @@ export function Header() {
       {/* Main Branding & Navigation Bar */}
       <div className="max-w-master mx-auto px-4 py-3 flex items-center justify-between gap-4">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 group shrink-0">
+        <Link href="/" className="flex items-center gap-2 group shrink-0 py-1">
           <img
             src="https://res.cloudinary.com/dtzyjynai/image/upload/v1787160480/c9014f75-543b-4908-aa38-94a839e8670c-removebg-preview_mj92p5.png"
             alt="CapitalSphere Logo"
-            className="h-20 w-auto object-contain drop-shadow-[0_0_10px_rgba(77,163,255,0.5)] group-hover:drop-shadow-[0_0_18px_rgba(77,163,255,0.7)] transition-all duration-300"
+            className="h-32 md:h-36 w-auto object-contain drop-shadow-[0_0_12px_rgba(77,163,255,0.6)] group-hover:drop-shadow-[0_0_22px_rgba(77,163,255,0.85)] transition-all duration-300"
           />
         </Link>
 
