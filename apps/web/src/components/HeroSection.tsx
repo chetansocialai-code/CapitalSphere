@@ -32,36 +32,24 @@ export function HeroSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Main Lead Editorial Story */}
         <div className="lg:col-span-8 cs-card border rounded-xl overflow-hidden group shadow-lg flex flex-col justify-between">
-          <div className="relative h-64 md:h-88 w-full overflow-hidden flex items-center justify-center">
+          <div className="relative h-64 md:h-80 w-full overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=1200"
-              alt="CapitalSphere Hero Banner"
+              alt="Sensex Rally"
               className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/40" />
-
-            {/* Centered CapitalSphere Hero Title Overlay */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10 space-y-2">
-              <div className="inline-flex items-center gap-2 bg-[#4DA3FF]/15 border border-[#4DA3FF]/40 text-[#4DA3FF] text-2xs font-mono font-bold px-3 py-1 rounded-full uppercase tracking-widest backdrop-blur-md shadow-md">
-                <Sparkles className="w-3.5 h-3.5 text-[#F2B84B]" /> FINANCIAL INTELLIGENCE PLATFORM
-              </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight font-sans text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
-                CAPITAL<span className="text-[#4DA3FF] drop-shadow-[0_0_20px_rgba(77,163,255,0.6)]">SPHERE</span>
-              </h1>
-              <p className="text-xs md:text-sm font-mono text-slate-300 tracking-widest uppercase font-semibold max-w-xl">
-                Markets • Money • Business • Intelligence
-              </p>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+            <div className="absolute top-4 left-4 flex gap-2">
+              <span className="bg-[#4DA3FF] text-slate-950 text-2xs font-bold font-mono px-2.5 py-1 rounded uppercase">MARKETS DESK</span>
+              <span className="bg-[#22C58B] text-white text-2xs font-bold font-mono px-2.5 py-1 rounded">NIFTY +0.58%</span>
             </div>
-
-            <div className="absolute top-4 left-4 flex gap-2 z-20">
-              <span className="bg-[#4DA3FF] text-slate-950 text-2xs font-bold font-mono px-2.5 py-1 rounded uppercase shadow-md">MARKETS DESK</span>
-              <span className="bg-[#22C58B] text-white text-2xs font-bold font-mono px-2.5 py-1 rounded shadow-md">NIFTY +0.58%</span>
-            </div>
-            <div className="absolute bottom-3 left-4 right-4 text-white z-20 flex justify-between items-end border-t border-slate-700/50 pt-2">
-              <div className="text-xs md:text-sm font-bold text-slate-200 line-clamp-1 font-sans">
+            <div className="absolute bottom-4 left-4 right-4 text-white">
+              <h1 className="text-xl md:text-3xl font-extrabold leading-tight group-hover:text-[#4DA3FF] transition font-sans">
                 Sensex Hits Record High of 81,000 as Tech and Banking Stocks Surge
-              </div>
-              <span className="text-2xs font-mono text-[#4DA3FF] shrink-0 font-bold hidden md:inline">LIVE FEED →</span>
+              </h1>
+              <p className="text-xs md:text-sm text-slate-200 mt-2 line-clamp-2 font-sans">
+                Indian benchmark indices rallied to fresh historic peaks driven by robust Q1 earnings from top tech heavyweights and strong FII inflows.
+              </p>
             </div>
           </div>
 
