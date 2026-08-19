@@ -98,18 +98,12 @@ export function Header() {
       {/* Main Branding & Navigation Bar */}
       <div className="max-w-master mx-auto px-4 py-3 flex items-center justify-between gap-4">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#4DA3FF] to-blue-900 flex items-center justify-center text-white font-extrabold font-mono text-xl shadow-lg shadow-[#4DA3FF]/20 border border-blue-400/40">
-            CS
-          </div>
-          <div>
-            <span className="font-extrabold text-xl tracking-tight font-sans flex items-center gap-1">
-              CAPITAL<span className="text-[#4DA3FF]">SPHERE</span>
-            </span>
-            <span className="block text-[9px] uppercase font-mono cs-text-sub tracking-widest -mt-1 font-semibold">
-              Markets • Money • Intelligence
-            </span>
-          </div>
+        <Link href="/" className="flex items-center gap-2 group shrink-0">
+          <img
+            src="https://res.cloudinary.com/dtzyjynai/image/upload/v1787160480/c9014f75-543b-4908-aa38-94a839e8670c-removebg-preview_mj92p5.png"
+            alt="CapitalSphere Logo"
+            className="h-12 w-auto object-contain drop-shadow-[0_0_8px_rgba(77,163,255,0.4)] group-hover:drop-shadow-[0_0_14px_rgba(77,163,255,0.6)] transition-all duration-300"
+          />
         </Link>
 
         {/* Global Search Box */}
