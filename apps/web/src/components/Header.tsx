@@ -102,7 +102,7 @@ export function Header() {
           <img
             src="https://res.cloudinary.com/dtzyjynai/image/upload/v1787160480/c9014f75-543b-4908-aa38-94a839e8670c-removebg-preview_mj92p5.png"
             alt="CapitalSphere Logo"
-            className="h-12 w-auto object-contain drop-shadow-[0_0_8px_rgba(77,163,255,0.4)] group-hover:drop-shadow-[0_0_14px_rgba(77,163,255,0.6)] transition-all duration-300"
+            className="h-20 w-auto object-contain drop-shadow-[0_0_10px_rgba(77,163,255,0.5)] group-hover:drop-shadow-[0_0_18px_rgba(77,163,255,0.7)] transition-all duration-300"
           />
         </Link>
 
