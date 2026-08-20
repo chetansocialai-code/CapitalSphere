@@ -27,12 +27,12 @@ function LoginForm() {
       const res = await fetch(`${apiUrl}/api/v1/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: email.trim().toLowerCase(), password }),
       });
 
       const json = await res.json();
       if (!res.ok || !json.success) {
-        throw new Error(json.error || 'Incorrect email or password.');
+        throw new Error(json.error || 'Email or password is incorrect.');
       }
 
       localStorage.setItem('cs_token', json.token);
@@ -49,36 +49,9 @@ function LoginForm() {
     }
   };
 
-  const handleGoogleLogin = async () => {
-    setLoading(true);
-    setError(null);
-    setSuccess(null);
-
-    try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
-      const res = await fetch(`${apiUrl}/api/v1/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: 'investor@capitalsphere.online', password: 'CapitalSphere2026User!' }),
-      });
-
-      const json = await res.json();
-      if (json.success && json.token) {
-        localStorage.setItem('cs_token', json.token);
-        localStorage.setItem('cs_user', JSON.stringify({ ...json.user, name: 'Google Investor' }));
-
-        setSuccess('Authenticated with Google OAuth! Redirecting...');
-        setTimeout(() => {
-          router.push(redirectPath);
-        }, 1000);
-      } else {
-        throw new Error(json.error || 'Google Sign-In failed.');
-      }
-    } catch (err: any) {
-      setError('Google Sign-In failed. Please sign in with Email.');
-    } finally {
-      setLoading(false);
-    }
+  const handleGoogleLogin = () => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+    window.location.href = `${apiUrl}/api/v1/auth/google`;
   };
 
   return (
@@ -111,7 +84,7 @@ function LoginForm() {
         </div>
       )}
 
-      {/* Google One-Click OAuth Button */}
+      {/* Google OAuth Button */}
       <button
         onClick={handleGoogleLogin}
         type="button"
