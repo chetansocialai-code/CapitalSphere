@@ -4,6 +4,7 @@ import { OptionChainTable } from '@/components/OptionChainTable';
 import { StockChart } from '@/components/StockChart';
 import { Screener } from '@/components/Screener';
 import { IPOCenter } from '@/components/IPOCenter';
+import { CapitalSphereAiIntelligence } from '@/components/CapitalSphereAiIntelligence';
 import Link from 'next/link';
 import { ArrowUpRight, TrendingUp, BookOpen, Layers } from 'lucide-react';
 
@@ -43,9 +44,12 @@ export default function HomePage() {
       {/* 1. Hero Section (Breaking News + Featured Story + Market Movers) */}
       <HeroSection />
 
-      {/* 2. Stock Technical Terminal Spotlight */}
-      <section className="space-y-4">
-        <div className="flex justify-between items-center border-b border-[#202B38] pb-3">
+      {/* 2. CapitalSphere AI Intelligence Hub */}
+      <CapitalSphereAiIntelligence />
+
+      {/* 3. Stock Technical Terminal Spotlight */}
+      <section className="space-y-4 max-w-master mx-auto px-4">
+        <div className="flex justify-between items-center border-b cs-border pb-3">
           <h2 className="text-sm font-bold font-mono text-white flex items-center gap-2">
             <TrendingUp className="w-4 h-4 text-[#4DA3FF]" /> Stock Chart & Fundamentals Terminal
           </h2>
@@ -56,9 +60,9 @@ export default function HomePage() {
         <StockChart symbol="RELIANCE" />
       </section>
 
-      {/* 3. Option Chain Matrix Section */}
-      <section className="space-y-4">
-        <div className="flex justify-between items-center border-b border-[#202B38] pb-3">
+      {/* 4. Option Chain Matrix Section */}
+      <section className="space-y-4 max-w-master mx-auto px-4">
+        <div className="flex justify-between items-center border-b cs-border pb-3">
           <h2 className="text-sm font-bold font-mono text-white flex items-center gap-2">
             <Layers className="w-4 h-4 text-[#22C58B]" /> Derivatives & Option Chain Analysis
           </h2>
@@ -69,8 +73,8 @@ export default function HomePage() {
         <OptionChainTable />
       </section>
 
-      {/* 4. Screener & IPO Side-by-Side */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      {/* 5. Screener & IPO Side-by-Side */}
+      <div className="max-w-master mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="lg:col-span-7">
           <Screener />
         </div>
@@ -79,9 +83,9 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* 5. CapitalSphere Intelligence News Stream */}
-      <section className="space-y-4">
-        <div className="flex justify-between items-center border-b border-[#202B38] pb-3">
+      {/* 6. CapitalSphere Business Journalism Stream */}
+      <section className="space-y-4 max-w-master mx-auto px-4">
+        <div className="flex justify-between items-center border-b cs-border pb-3">
           <h2 className="text-sm font-bold font-mono text-white flex items-center gap-2">
             <BookOpen className="w-4 h-4 text-[#F2B84B]" /> CapitalSphere Business Journalism
           </h2>
@@ -95,31 +99,31 @@ export default function HomePage() {
             <Link
               key={article.id}
               href={`/news/${article.slug}`}
-              className="bg-[#0C1118] border border-[#202B38] rounded-xl overflow-hidden group hover:border-[#4DA3FF]/40 transition flex flex-col justify-between shadow-lg"
+              className="cs-card border rounded-xl overflow-hidden group hover:border-[#4DA3FF]/40 transition flex flex-col justify-between shadow-lg"
             >
               <div>
-                <div className="h-40 overflow-hidden">
+                <div className="relative h-44 w-full overflow-hidden">
                   <img
                     src={article.image}
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                   />
+                  <span className="absolute top-3 left-3 bg-[#4DA3FF] text-slate-950 font-mono font-bold text-3xs px-2 py-0.5 rounded uppercase">
+                    {article.category}
+                  </span>
                 </div>
                 <div className="p-4 space-y-2">
-                  <div className="flex items-center justify-between text-3xs font-mono text-slate-400">
-                    <span className="text-[#4DA3FF] font-bold uppercase">{article.category}</span>
-                    <span>{article.time}</span>
-                  </div>
-                  <h3 className="text-sm font-bold text-white group-hover:text-[#4DA3FF] transition font-sans line-clamp-2">
+                  <h3 className="text-sm font-bold font-sans line-clamp-2 group-hover:text-[#4DA3FF] transition">
                     {article.title}
                   </h3>
-                  <p className="text-xs text-slate-400 line-clamp-2 font-sans">
+                  <p className="text-xs cs-text-sub font-sans line-clamp-2">
                     {article.excerpt}
                   </p>
                 </div>
               </div>
-              <div className="px-4 pb-4 text-2xs text-[#4DA3FF] font-mono font-semibold flex items-center gap-1">
-                Read Intelligence Brief →
+              <div className="px-4 pb-4 pt-2 border-t cs-border text-3xs font-mono cs-text-sub flex justify-between items-center">
+                <span>{article.time}</span>
+                <span className="text-[#4DA3FF] font-bold">Read Full Article →</span>
               </div>
             </Link>
           ))}

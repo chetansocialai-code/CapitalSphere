@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Search, ShieldCheck, Zap, Menu, X, BarChart3, User, Sun, Moon, Laptop } from 'lucide-react';
+import { Search, ShieldCheck, Zap, Menu, X, BarChart3, User, Sun, Moon, Globe, DollarSign, Flame } from 'lucide-react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,23 +54,35 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 cs-card border-b backdrop-blur-md">
-      {/* Top Utility Header */}
-      <div className="cs-topbar text-xs py-1.5 px-4 flex justify-between items-center border-b">
-        <div className="flex items-center gap-4">
-          <span className="flex items-center gap-1 font-mono text-2xs font-bold tracking-wider uppercase text-[#F2B84B]">
-            <ShieldCheck className="w-3.5 h-3.5" /> UPSTOX V3 FEED CONNECTED
+      {/* Top Utility Status Bar */}
+      <div className="cs-topbar text-xs py-1.5 px-4 flex justify-between items-center border-b overflow-x-auto whitespace-nowrap">
+        <div className="flex items-center gap-4 text-3xs font-mono">
+          <span className="flex items-center gap-1 font-bold uppercase text-[#22C58B] shrink-0">
+            <span className="h-2 w-2 rounded-full bg-[#22C58B] animate-ping inline-block"></span>
+            NSE / BSE LIVE
           </span>
-          <span className="hidden md:inline cs-text-sub opacity-50">|</span>
-          <span className="hidden md:inline font-mono text-2xs cs-text-sub">NSE / BSE Real-Time Streaming</span>
+          <span className="cs-text-sub opacity-40">|</span>
+          <span className="cs-text-sub font-semibold">USD/INR: <span className="text-white font-bold">₹83.92</span> <span className="text-[#22C58B]">+0.04%</span></span>
+          <span className="hidden sm:inline cs-text-sub opacity-40">|</span>
+          <span className="hidden sm:inline cs-text-sub font-semibold">BRENT CRUDE: <span className="text-white font-bold">$76.40</span> <span className="text-[#F05252]">-0.42%</span></span>
+          <span className="hidden md:inline cs-text-sub opacity-40">|</span>
+          <span className="hidden md:inline cs-text-sub font-semibold">GOLD (10g): <span className="text-white font-bold">₹72,450</span> <span className="text-[#22C58B]">+0.25%</span></span>
+          <span className="hidden lg:inline cs-text-sub opacity-40">|</span>
+          <span className="hidden lg:inline cs-text-sub font-semibold">BTC/USD: <span className="text-white font-bold">$64,250</span> <span className="text-[#22C58B]">+1.45%</span></span>
         </div>
-        <div className="flex items-center gap-4 text-2xs font-mono">
-          <Link href="/admin" className="hover:text-blue-500 transition">Admin CMS Portal</Link>
-          <Link href="/about" className="hover:text-blue-500 transition">About</Link>
+
+        <div className="flex items-center gap-3 text-2xs font-mono shrink-0">
+          <div className="hidden sm:flex items-center gap-1.5 bg-[#4DA3FF]/10 text-[#4DA3FF] border border-[#4DA3FF]/30 px-2.5 py-0.5 rounded text-3xs font-bold uppercase tracking-wider">
+            <ShieldCheck className="w-3 h-3 text-[#22C58B]" /> UPSTOX V3 ENGINE
+          </div>
+
+          <Link href="/admin" className="cs-text-sub hover:text-[#4DA3FF] transition hidden md:inline">Admin CMS</Link>
+          <Link href="/about" className="cs-text-sub hover:text-[#4DA3FF] transition hidden md:inline">About</Link>
 
           {/* Dark / Bright Mode Switcher Button */}
           <button
             onClick={toggleTheme}
-            className="flex items-center gap-1.5 cs-card hover:border-[#4DA3FF] px-2.5 py-1 rounded-md border text-xs font-semibold font-mono transition shadow-sm"
+            className="flex items-center gap-1.5 cs-card hover:border-[#4DA3FF] px-2.5 py-0.5 rounded-md border text-xs font-semibold font-mono transition shadow-xs"
             title={`Switch to ${themeMode === 'dark' ? 'Bright / Light' : 'Dark / Midnight'} Mode`}
           >
             {themeMode === 'dark' ? (
@@ -85,24 +97,17 @@ export function Header() {
               </>
             )}
           </button>
-
-          <a
-            href="http://localhost:4000/api/v1/upstox/login"
-            className="bg-[#4DA3FF]/15 hover:bg-[#4DA3FF]/25 text-[#4DA3FF] border border-[#4DA3FF]/40 px-2.5 py-0.5 rounded font-mono font-semibold transition flex items-center gap-1"
-          >
-            <Zap className="w-3 h-3 text-[#F2B84B]" /> Connect Upstox
-          </a>
         </div>
       </div>
 
       {/* Main Branding & Navigation Bar */}
-      <div className="max-w-master mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      <div className="max-w-master mx-auto px-4 py-2 flex items-center justify-between gap-4">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 group shrink-0 py-1">
+        <Link href="/" className="flex items-center gap-2 group shrink-0">
           <img
             src="https://res.cloudinary.com/dtzyjynai/image/upload/v1787160480/c9014f75-543b-4908-aa38-94a839e8670c-removebg-preview_mj92p5.png"
             alt="CapitalSphere Logo"
-            className="h-32 md:h-36 w-auto object-contain drop-shadow-[0_0_12px_rgba(77,163,255,0.6)] group-hover:drop-shadow-[0_0_22px_rgba(77,163,255,0.85)] transition-all duration-300"
+            className="h-28 md:h-32 w-auto object-contain drop-shadow-[0_0_12px_rgba(77,163,255,0.6)] group-hover:drop-shadow-[0_0_20px_rgba(77,163,255,0.85)] transition-all duration-300"
           />
         </Link>
 
@@ -112,7 +117,7 @@ export function Header() {
           <input
             type="text"
             placeholder="Search Stocks, Option Chains, News (e.g. RELIANCE, NIFTY)..."
-            className="w-full cs-card text-xs placeholder:text-slate-500 pl-9 pr-4 py-2 rounded-lg border focus:border-[#4DA3FF] focus:outline-none transition shadow-sm"
+            className="w-full cs-card text-xs placeholder:text-slate-500 pl-9 pr-4 py-2 rounded-lg border focus:border-[#4DA3FF] focus:outline-none transition shadow-xs"
           />
         </div>
 

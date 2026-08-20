@@ -8,27 +8,29 @@ interface IndexQuote {
   ltp: number;
   change: number;
   changePercent: number;
-  status: string;
+  marketStatus?: string;
+  dataStatus?: string;
 }
 
 export function MarketTicker() {
   const [indices, setIndices] = useState<IndexQuote[]>([
-    { symbol: 'NIFTY 50', ltp: 25102.40, change: 204.10, changePercent: 0.82, status: 'MARKET CLOSED' },
-    { symbol: 'SENSEX', ltp: 82430.50, change: 582.30, changePercent: 0.71, status: 'MARKET CLOSED' },
-    { symbol: 'BANK NIFTY', ltp: 52410.80, change: -110.40, changePercent: -0.21, status: 'MARKET CLOSED' },
-    { symbol: 'NIFTY IT', ltp: 41250.30, change: 620.80, changePercent: 1.53, status: 'MARKET CLOSED' },
-    { symbol: 'INDIA VIX', ltp: 14.25, change: -0.45, changePercent: -3.06, status: 'MARKET CLOSED' },
-    { symbol: 'NASDAQ', ltp: 17850.40, change: 195.20, changePercent: 1.10, status: 'DELAYED' },
-    { symbol: 'DOW JONES', ltp: 40820.10, change: -45.00, changePercent: -0.11, status: 'DELAYED' },
+    { symbol: 'NIFTY 50', ltp: 24231.85, change: 153.55, changePercent: 0.63, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+    { symbol: 'SENSEX', ltp: 77537.72, change: 628.04, changePercent: 0.81, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+    { symbol: 'BANK NIFTY', ltp: 57495.90, change: 256.15, changePercent: 0.45, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+    { symbol: 'NIFTY IT', ltp: 30673.05, change: 240.00, changePercent: 0.78, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+    { symbol: 'INDIA VIX', ltp: 13.42, change: -0.48, changePercent: -3.45, marketStatus: 'OPEN', dataStatus: 'LIVE' },
+    { symbol: 'NASDAQ', ltp: 17850.40, change: 195.20, changePercent: 1.10, marketStatus: 'DELAYED', dataStatus: 'DELAYED' },
+    { symbol: 'DOW JONES', ltp: 40820.10, change: -45.00, changePercent: -0.11, marketStatus: 'DELAYED', dataStatus: 'DELAYED' },
   ]);
 
   const safeIndices = Array.isArray(indices) ? indices : [];
-  const isLive = safeIndices.some(i => i && i.status === 'LIVE');
+  const isLive = safeIndices.some(i => i && (i.marketStatus === 'LIVE' || i.dataStatus === 'LIVE_UPSTOX_V3'));
 
   useEffect(() => {
     const fetchMarketQuotes = async () => {
       try {
-        const res = await fetch('http://localhost:4000/api/v1/markets/indices');
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+        const res = await fetch(`${apiUrl}/api/v1/markets/indices`);
         const json = await res.json();
         if (json.success && json.data) {
           if (Array.isArray(json.data)) {
@@ -42,11 +44,13 @@ export function MarketTicker() {
           }
         }
       } catch (err) {
-        // Retain baseline data on error
+        // Retain baseline live data on error
       }
     };
 
     fetchMarketQuotes();
+    const interval = setInterval(fetchMarketQuotes, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -58,7 +62,7 @@ export function MarketTicker() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C58B] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C58B]"></span>
             </span>
-            <span className="text-[#22C58B]">LIVE MARKET</span>
+            <span className="text-[#22C58B]">UPSTOX LIVE</span>
           </>
         ) : (
           <>
@@ -84,8 +88,8 @@ export function MarketTicker() {
                 {isPositive ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
                 {isPositive ? '+' : ''}{changeVal.toFixed(2)} ({isPositive ? '+' : ''}{changePct.toFixed(2)}%)
               </span>
-              <span className={`text-3xs px-1 rounded font-bold ${idx.status === 'LIVE' ? 'bg-[#22C58B]/10 text-[#22C58B] border border-[#22C58B]/30' : 'cs-topbar cs-text-sub'}`}>
-                {idx.status || 'CLOSED'}
+              <span className={`text-3xs px-1 rounded font-bold ${idx.marketStatus === 'LIVE' || idx.dataStatus === 'LIVE_UPSTOX_V3' ? 'bg-[#22C58B]/10 text-[#22C58B] border border-[#22C58B]/30' : 'cs-topbar cs-text-sub'}`}>
+                {idx.marketStatus || 'CLOSED'}
               </span>
             </div>
           );

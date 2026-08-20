@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { ShieldCheck, Info, FileText, Lock, Globe } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -49,19 +50,20 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Company Column */}
+        {/* Intelligence & AI */}
         <div className="space-y-3">
-          <div className="font-bold text-xs uppercase tracking-wider text-[#4DA3FF]">Company</div>
+          <div className="font-bold text-xs uppercase tracking-wider text-[#4DA3FF]">Intelligence</div>
           <ul className="space-y-2 text-2xs">
-            <li><Link href="/about" className="hover:text-blue-500 transition">About CapitalSphere</Link></li>
+            <li><Link href="/about" className="hover:text-blue-500 transition">Editorial Policy</Link></li>
+            <li><Link href="/about" className="hover:text-blue-500 transition">Fact Checking Policy</Link></li>
+            <li><Link href="/about" className="hover:text-blue-500 transition">AI Content Policy</Link></li>
             <li><Link href="/admin" className="hover:text-blue-500 transition">Admin CMS Portal</Link></li>
-            <li><Link href="/contact" className="hover:text-blue-500 transition">Contact Us</Link></li>
           </ul>
         </div>
 
         {/* Legal Column */}
         <div className="space-y-3">
-          <div className="font-bold text-xs uppercase tracking-wider text-[#4DA3FF]">Legal</div>
+          <div className="font-bold text-xs uppercase tracking-wider text-[#4DA3FF]">Legal & Trust</div>
           <ul className="space-y-2 text-2xs">
             <li><Link href="/privacy" className="hover:text-blue-500 transition">Privacy Policy</Link></li>
             <li><Link href="/terms" className="hover:text-blue-500 transition">Terms of Service</Link></li>
@@ -70,12 +72,24 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Trust & Financial Disclaimer Box */}
+      <div className="max-w-master mx-auto px-4 pt-6 text-3xs cs-text-sub space-y-2 border-b cs-border pb-6">
+        <div className="flex items-center gap-1.5 text-xs text-[#F2B84B] font-bold">
+          <ShieldCheck className="w-4 h-4 text-[#F2B84B]" /> SEBI & Financial Disclaimer:
+        </div>
+        <p className="leading-relaxed">
+          CapitalSphere (www.capitalsphere.online) is a financial intelligence and news publisher platform. Market quotes are powered by authentic Upstox Developer V3 API endpoints. CapitalSphere does not provide personalized investment advice or SEBI-registered portfolio management recommendations. Investments in securities markets are subject to market risks; read all scheme-related documents carefully before investing.
+        </p>
+      </div>
+
       <div className="max-w-master mx-auto px-4 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-2xs">
         <div>
-          © 2026 <span className="font-bold">CAPITALSPHERE</span>. Markets. Money. Business. Intelligence.
+          © 2026 <span className="font-bold text-white">CAPITALSPHERE</span>. Markets • Money • Business • Intelligence.
         </div>
-        <div className="cs-text-sub text-3xs">
-          Market data provided by Upstox Developer V3 API. Investment in securities is subject to market risks.
+        <div className="cs-text-sub text-3xs flex items-center gap-4">
+          <span>Upstox V3 Feed Connected</span>
+          <span>•</span>
+          <span>Google AdSense ID: ca-pub-2416474909531167</span>
         </div>
       </div>
     </footer>
