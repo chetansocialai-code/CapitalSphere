@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Search, ShieldCheck, Zap, Menu, X, BarChart3, User, Sun, Moon, Globe, DollarSign, Flame, Code } from 'lucide-react';
+import { Search, ShieldCheck, Zap, Menu, X, BarChart3, User, Sun, Moon, Globe, DollarSign, Flame, Code, LogOut, Key, ChevronDown } from 'lucide-react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [themeMode, setThemeMode] = useState<'dark' | 'light'>('dark');
+  const [currentUser, setCurrentUser] = useState<any>(null);
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
   useEffect(() => {
     // Load persisted theme preference
@@ -14,6 +16,15 @@ export function Header() {
     const initialTheme = savedTheme || 'dark';
     setThemeMode(initialTheme);
     applyTheme(initialTheme);
+
+    // Load active user session
+    const token = localStorage.getItem('cs_token');
+    const userJson = localStorage.getItem('cs_user');
+    if (token && userJson) {
+      try {
+        setCurrentUser(JSON.parse(userJson));
+      } catch (e) {}
+    }
   }, []);
 
   const applyTheme = (mode: 'dark' | 'light') => {
@@ -39,6 +50,14 @@ export function Header() {
     applyTheme(nextTheme);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('cs_token');
+    localStorage.removeItem('cs_user');
+    setCurrentUser(null);
+    setUserDropdownOpen(false);
+    window.location.href = '/';
+  };
+
   const mainNav = [
     { name: 'MARKETS', href: '/markets' },
     { name: 'NEWS', href: '/news' },
@@ -50,7 +69,7 @@ export function Header() {
     { name: 'TOOLS', href: '/tools' },
     { name: 'CALENDAR', href: '/economy/calendar' },
     { name: 'WATCHLIST', href: '/watchlist' },
-    { name: 'DEVELOPERS', href: '/developers' },
+    { name: 'DEVELOPERS API', href: '/developers' },
   ];
 
   return (
@@ -130,12 +149,58 @@ export function Header() {
           >
             <BarChart3 className="w-3.5 h-3.5 text-[#4DA3FF]" /> Watchlist
           </Link>
-          <Link
-            href="/login"
-            className="text-xs bg-[#4DA3FF] hover:bg-[#69B2FF] text-slate-950 font-bold px-4 py-2 rounded-lg shadow-md shadow-[#4DA3FF]/20 transition flex items-center gap-1.5 font-sans"
-          >
-            <User className="w-3.5 h-3.5" /> Sign In
-          </Link>
+
+          {/* User Account Login / Profile State */}
+          {currentUser ? (
+            <div className="relative">
+              <button
+                onClick={() => setUserDropdownOpen(!userDropdownOpen)}
+                className="flex items-center gap-2 bg-[#4DA3FF]/15 border border-[#4DA3FF]/40 text-[#4DA3FF] hover:bg-[#4DA3FF]/25 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition"
+              >
+                <div className="w-6 h-6 rounded-full bg-[#4DA3FF] text-slate-950 flex items-center justify-center font-extrabold text-3xs">
+                  {currentUser.name ? currentUser.name.substring(0, 2).toUpperCase() : 'CS'}
+                </div>
+                <span className="line-clamp-1">{currentUser.name || 'Account'}</span>
+                <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+
+              {userDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-56 cs-card border rounded-xl shadow-2xl p-2 z-50 space-y-1 font-mono text-xs">
+                  <div className="p-2 border-b cs-border">
+                    <div className="font-bold text-white text-xs">{currentUser.name}</div>
+                    <div className="text-3xs cs-text-sub truncate">{currentUser.email}</div>
+                  </div>
+                  <Link
+                    href="/dashboard"
+                    onClick={() => setUserDropdownOpen(false)}
+                    className="flex items-center gap-2 p-2 hover:bg-slate-500/10 rounded-lg transition"
+                  >
+                    <User className="w-4 h-4 text-[#4DA3FF]" /> My Dashboard
+                  </Link>
+                  <Link
+                    href="/developers"
+                    onClick={() => setUserDropdownOpen(false)}
+                    className="flex items-center gap-2 p-2 hover:bg-slate-500/10 rounded-lg transition"
+                  >
+                    <Key className="w-4 h-4 text-[#22C58B]" /> My API Keys
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="w-full flex items-center gap-2 p-2 text-rose-400 hover:bg-rose-500/10 rounded-lg transition text-left"
+                  >
+                    <LogOut className="w-4 h-4" /> Sign Out
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link
+              href="/login"
+              className="text-xs bg-[#4DA3FF] hover:bg-[#69B2FF] text-slate-950 font-bold px-4 py-2 rounded-lg shadow-md shadow-[#4DA3FF]/20 transition flex items-center gap-1.5 font-sans"
+            >
+              <User className="w-3.5 h-3.5" /> Sign In
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Toggle */}
