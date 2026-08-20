@@ -1,6 +1,7 @@
 import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { sendVerificationEmail, sendPasswordResetEmail } from './email';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'capitalsphere_production_super_secret_jwt_key_2026_finance_platform';
 
@@ -130,6 +131,9 @@ export async function registerUser(email: string, passwordPlain: string, name?: 
         expiresAt: Date.now() + 24 * 60 * 60 * 1000,
       };
 
+      const verificationUrl = `https://www.capitalsphere.online/verify-email?token=${rawToken}`;
+      sendVerificationEmail(normalizedEmail, verificationUrl);
+
       return {
         user: {
           id: existingUser.id,
@@ -139,7 +143,7 @@ export async function registerUser(email: string, passwordPlain: string, name?: 
           role: existingUser.role,
         },
         verificationToken: rawToken,
-        verificationUrl: `https://www.capitalsphere.online/verify-email?token=${rawToken}`,
+        verificationUrl,
       };
     }
 
@@ -172,6 +176,9 @@ export async function registerUser(email: string, passwordPlain: string, name?: 
     expiresAt: Date.now() + 24 * 60 * 60 * 1000,
   };
 
+  const verificationUrl = `https://www.capitalsphere.online/verify-email?token=${rawToken}`;
+  sendVerificationEmail(normalizedEmail, verificationUrl);
+
   return {
     user: {
       id: newUser.id,
@@ -181,7 +188,7 @@ export async function registerUser(email: string, passwordPlain: string, name?: 
       role: newUser.role,
     },
     verificationToken: rawToken,
-    verificationUrl: `https://www.capitalsphere.online/verify-email?token=${rawToken}`,
+    verificationUrl,
   };
 }
 
@@ -284,10 +291,13 @@ export async function requestPasswordReset(email: string) {
     expiresAt: Date.now() + 1 * 60 * 60 * 1000,
   };
 
+  const resetUrl = `https://www.capitalsphere.online/reset-password?token=${rawToken}`;
+  sendPasswordResetEmail(normalizedEmail, resetUrl);
+
   return {
     ...genericResponse,
     resetToken: rawToken,
-    resetUrl: `https://www.capitalsphere.online/reset-password?token=${rawToken}`,
+    resetUrl,
   };
 }
 
