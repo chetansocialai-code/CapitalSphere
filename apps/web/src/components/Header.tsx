@@ -92,6 +92,10 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-3 text-2xs font-mono shrink-0">
+          <span className="hidden lg:flex items-center gap-1 bg-[#22C58B]/10 text-[#22C58B] border border-[#22C58B]/30 px-2 py-0.5 rounded text-3xs font-bold uppercase">
+            <ShieldCheck className="w-3 h-3 text-[#22C58B]" /> GOOGLE AUTH CONNECTED
+          </span>
+
           <Link href="/developers" className="hidden sm:flex items-center gap-1.5 bg-[#4DA3FF]/10 hover:bg-[#4DA3FF]/20 text-[#4DA3FF] border border-[#4DA3FF]/30 px-2.5 py-0.5 rounded text-3xs font-bold uppercase tracking-wider transition">
             <Code className="w-3 h-3 text-[#22C58B]" /> OPEN API PORTAL
           </Link>
