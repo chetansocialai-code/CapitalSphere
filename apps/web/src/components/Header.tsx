@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Search, ShieldCheck, Zap, Menu, X, BarChart3, User, Sun, Moon, Globe, DollarSign, Flame } from 'lucide-react';
+import { Search, ShieldCheck, Zap, Menu, X, BarChart3, User, Sun, Moon, Globe, DollarSign, Flame, Code } from 'lucide-react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,6 +50,7 @@ export function Header() {
     { name: 'TOOLS', href: '/tools' },
     { name: 'CALENDAR', href: '/economy/calendar' },
     { name: 'WATCHLIST', href: '/watchlist' },
+    { name: 'DEVELOPERS', href: '/developers' },
   ];
 
   return (
@@ -72,9 +73,9 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-3 text-2xs font-mono shrink-0">
-          <div className="hidden sm:flex items-center gap-1.5 bg-[#4DA3FF]/10 text-[#4DA3FF] border border-[#4DA3FF]/30 px-2.5 py-0.5 rounded text-3xs font-bold uppercase tracking-wider">
-            <ShieldCheck className="w-3 h-3 text-[#22C58B]" /> UPSTOX V3 ENGINE
-          </div>
+          <Link href="/developers" className="hidden sm:flex items-center gap-1.5 bg-[#4DA3FF]/10 hover:bg-[#4DA3FF]/20 text-[#4DA3FF] border border-[#4DA3FF]/30 px-2.5 py-0.5 rounded text-3xs font-bold uppercase tracking-wider transition">
+            <Code className="w-3 h-3 text-[#22C58B]" /> OPEN API PORTAL
+          </Link>
 
           <Link href="/admin" className="cs-text-sub hover:text-[#4DA3FF] transition hidden md:inline">Admin CMS</Link>
           <Link href="/about" className="cs-text-sub hover:text-[#4DA3FF] transition hidden md:inline">About</Link>

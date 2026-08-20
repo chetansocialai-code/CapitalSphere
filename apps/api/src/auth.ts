@@ -30,12 +30,23 @@ export interface PasswordResetToken {
   expiresAt: number;
 }
 
+export interface CapitalSphereApiKey {
+  id: string;
+  userId: string;
+  name: string;
+  keyPrefix: string;
+  keyHash: string;
+  createdAt: string;
+  lastUsedAt?: string;
+}
+
 // In-Memory Production Data Store with initial hashed users
 const usersDb: Record<string, UserAccount> = {};
 const verificationTokensDb: Record<string, VerificationToken> = {};
 const resetTokensDb: Record<string, PasswordResetToken> = {};
 const userWatchlistsDb: Record<string, string[]> = {};
-const userPortfoliosDb: Record<string, any[]> = {};
+const userApiKeysDb: Record<string, CapitalSphereApiKey[]> = {};
+const apiKeysLookupDb: Record<string, CapitalSphereApiKey> = {}; // Key hash -> ApiKey object
 const rateLimitsDb: Record<string, { attempts: number; resetAt: number }> = {};
 
 // Initialize Default Verified Admin & User Accounts (bcrypt hashed)
@@ -70,6 +81,9 @@ async function seedDefaultUsers() {
     lastLoginAt: new Date().toISOString(),
   };
   userWatchlistsDb[userId] = ['INFY', 'ICICIBANK', 'TATAMOTORS', 'SENSEX'];
+
+  // Create initial demo API Key for Senior Investor
+  createApiKeyForUser(userId, 'Production Algorithmic Trading Key');
 }
 
 seedDefaultUsers();
@@ -229,7 +243,6 @@ export async function requestPasswordReset(email: string) {
   const normalizedEmail = email.toLowerCase().trim();
   const user = usersDb[normalizedEmail];
 
-  // Return generic success to prevent email enumeration attacks
   const genericResponse = {
     message: "If an account exists for this email, we've sent instructions to reset your password.",
   };
@@ -242,7 +255,7 @@ export async function requestPasswordReset(email: string) {
     id: `rst_${crypto.randomBytes(8).toString('hex')}`,
     email: normalizedEmail,
     tokenHash,
-    expiresAt: Date.now() + 1 * 60 * 60 * 1000, // 1 hour expiry
+    expiresAt: Date.now() + 1 * 60 * 60 * 1000,
   };
 
   return {
@@ -282,7 +295,7 @@ export async function resetPasswordWithToken(token: string, newPasswordPlain: st
 export function verifyJwtToken(token: string) {
   try {
     const decoded = jwt.verify(token, JWT_SECRET) as { userId: string; email: string; role: 'USER' | 'EDITOR' | 'ADMIN' };
-    const user = usersDb[decoded.email];
+    const user = Object.values(usersDb).find(u => u.id === decoded.userId);
     if (!user) return null;
     return {
       id: user.id,
@@ -294,6 +307,60 @@ export function verifyJwtToken(token: string) {
   } catch (err) {
     return null;
   }
+}
+
+// CapitalSphere API Key Management Engine
+export function createApiKeyForUser(userId: string, keyName?: string) {
+  const randomHex = crypto.randomBytes(24).toString('hex');
+  const rawApiKey = `cs_live_${randomHex}`;
+  const keyPrefix = rawApiKey.substring(0, 15);
+  const keyHash = crypto.createHash('sha256').update(rawApiKey).digest('hex');
+
+  const apiKeyObj: CapitalSphereApiKey = {
+    id: `key_${crypto.randomBytes(8).toString('hex')}`,
+    userId,
+    name: keyName || 'My CapitalSphere API Key',
+    keyPrefix: `${keyPrefix}...`,
+    keyHash,
+    createdAt: new Date().toISOString(),
+  };
+
+  const userKeys = userApiKeysDb[userId] || [];
+  userKeys.push(apiKeyObj);
+  userApiKeysDb[userId] = userKeys;
+  apiKeysLookupDb[keyHash] = apiKeyObj;
+
+  return {
+    apiKey: rawApiKey,
+    keyDetails: apiKeyObj,
+  };
+}
+
+export function getUserApiKeys(userId: string): CapitalSphereApiKey[] {
+  return userApiKeysDb[userId] || [];
+}
+
+export function deleteApiKeyForUser(userId: string, keyId: string): boolean {
+  const keys = userApiKeysDb[userId] || [];
+  const targetKey = keys.find(k => k.id === keyId);
+  if (!targetKey) return false;
+
+  userApiKeysDb[userId] = keys.filter(k => k.id !== keyId);
+  delete apiKeysLookupDb[targetKey.keyHash];
+  return true;
+}
+
+export function validateApiKey(rawApiKey: string): CapitalSphereApiKey | null {
+  if (!rawApiKey.startsWith('cs_live_') && !rawApiKey.startsWith('cs_test_')) {
+    return null;
+  }
+
+  const keyHash = crypto.createHash('sha256').update(rawApiKey).digest('hex');
+  const apiKeyObj = apiKeysLookupDb[keyHash];
+  if (!apiKeyObj) return null;
+
+  apiKeyObj.lastUsedAt = new Date().toISOString();
+  return apiKeyObj;
 }
 
 // Watchlist Persistence per User ID
