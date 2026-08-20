@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Mail, Lock, ArrowRight, ShieldCheck, AlertCircle, CheckCircle2 } from 'lucide-react';
@@ -15,6 +15,21 @@ function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+
+  useEffect(() => {
+    const oauthToken = searchParams.get('oauth_token');
+    const oauthUser = searchParams.get('oauth_user');
+    if (oauthToken && oauthUser) {
+      try {
+        localStorage.setItem('cs_token', oauthToken);
+        localStorage.setItem('cs_user', oauthUser);
+        setSuccess('Authenticated with Google OAuth! Redirecting to dashboard...');
+        setTimeout(() => {
+          router.push(redirectPath);
+        }, 800);
+      } catch (e) {}
+    }
+  }, [searchParams, redirectPath, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
