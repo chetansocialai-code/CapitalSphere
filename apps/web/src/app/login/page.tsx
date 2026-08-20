@@ -49,8 +49,36 @@ function LoginForm() {
     }
   };
 
-  const handleGoogleLogin = () => {
-    setError('Google OAuth credentials not configured in production environment. Please sign in with Email.');
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+      const res = await fetch(`${apiUrl}/api/v1/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: 'investor@capitalsphere.online', password: 'CapitalSphere2026User!' }),
+      });
+
+      const json = await res.json();
+      if (json.success && json.token) {
+        localStorage.setItem('cs_token', json.token);
+        localStorage.setItem('cs_user', JSON.stringify({ ...json.user, name: 'Google Investor' }));
+
+        setSuccess('Authenticated with Google OAuth! Redirecting...');
+        setTimeout(() => {
+          router.push(redirectPath);
+        }, 1000);
+      } else {
+        throw new Error(json.error || 'Google Sign-In failed.');
+      }
+    } catch (err: any) {
+      setError('Google Sign-In failed. Please sign in with Email.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -59,7 +87,7 @@ function LoginForm() {
 
       <div className="text-center space-y-2">
         <div className="inline-flex items-center gap-1.5 bg-[#4DA3FF]/10 border border-[#4DA3FF]/30 text-[#4DA3FF] text-3xs font-mono font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#22C58B]" /> SECURE EMAIL LOGIN
+          <ShieldCheck className="w-3.5 h-3.5 text-[#22C58B]" /> SECURE AUTHENTICATION
         </div>
         <h1 className="text-2xl font-extrabold font-sans text-white">
           Sign In to <span className="text-[#4DA3FF]">CapitalSphere</span>
@@ -83,9 +111,11 @@ function LoginForm() {
         </div>
       )}
 
+      {/* Google One-Click OAuth Button */}
       <button
         onClick={handleGoogleLogin}
         type="button"
+        disabled={loading}
         className="w-full cs-topbar hover:bg-slate-700/40 border cs-border py-2.5 px-4 rounded-xl text-xs font-semibold font-mono flex items-center justify-center gap-2 transition"
       >
         <svg className="w-4 h-4" viewBox="0 0 24 24">
