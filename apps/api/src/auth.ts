@@ -40,16 +40,16 @@ export interface CapitalSphereApiKey {
   lastUsedAt?: string;
 }
 
-// In-Memory Production Data Store with initial hashed users
+// In-Memory & Database Data Store with initial hashed users
 const usersDb: Record<string, UserAccount> = {};
 const verificationTokensDb: Record<string, VerificationToken> = {};
 const resetTokensDb: Record<string, PasswordResetToken> = {};
 const userWatchlistsDb: Record<string, string[]> = {};
 const userApiKeysDb: Record<string, CapitalSphereApiKey[]> = {};
-const apiKeysLookupDb: Record<string, CapitalSphereApiKey> = {}; // Key hash -> ApiKey object
+const apiKeysLookupDb: Record<string, CapitalSphereApiKey> = {};
 const rateLimitsDb: Record<string, { attempts: number; resetAt: number }> = {};
 
-// Initialize Default Verified Admin & User Accounts (bcrypt hashed)
+// Seed Default Verified Admin & User Accounts
 async function seedDefaultUsers() {
   const adminPasswordHash = await bcrypt.hash('CapitalSphere2026Admin!', 10);
   const userPasswordHash = await bcrypt.hash('CapitalSphere2026User!', 10);
@@ -82,7 +82,6 @@ async function seedDefaultUsers() {
   };
   userWatchlistsDb[userId] = ['INFY', 'ICICIBANK', 'TATAMOTORS', 'SENSEX'];
 
-  // Create initial demo API Key for Senior Investor
   createApiKeyForUser(userId, 'Production Algorithmic Trading Key');
 }
 
@@ -113,11 +112,38 @@ export function clearRateLimit(ipOrEmail: string) {
   delete rateLimitsDb[ipOrEmail];
 }
 
-// User Registration
+// User Registration Server Logic
 export async function registerUser(email: string, passwordPlain: string, name?: string) {
   const normalizedEmail = email.toLowerCase().trim();
-  if (usersDb[normalizedEmail]) {
-    throw new Error('An account with this email address already exists.');
+  const cleanName = (name || '').trim() || normalizedEmail.split('@')[0];
+
+  const existingUser = usersDb[normalizedEmail];
+  if (existingUser) {
+    if (!existingUser.emailVerified) {
+      // Re-issue verification token safely
+      const rawToken = crypto.randomBytes(32).toString('hex');
+      const tokenHash = crypto.createHash('sha256').update(rawToken).digest('hex');
+      verificationTokensDb[rawToken] = {
+        id: `tok_${crypto.randomBytes(8).toString('hex')}`,
+        email: normalizedEmail,
+        tokenHash,
+        expiresAt: Date.now() + 24 * 60 * 60 * 1000,
+      };
+
+      return {
+        user: {
+          id: existingUser.id,
+          email: existingUser.email,
+          name: existingUser.name,
+          emailVerified: false,
+          role: existingUser.role,
+        },
+        verificationToken: rawToken,
+        verificationUrl: `https://www.capitalsphere.online/verify-email?token=${rawToken}`,
+      };
+    }
+
+    throw new Error('An account with this email address already exists. Please sign in instead.');
   }
 
   const passwordHash = await bcrypt.hash(passwordPlain, 10);
@@ -125,10 +151,10 @@ export async function registerUser(email: string, passwordPlain: string, name?: 
   const newUser: UserAccount = {
     id: userId,
     email: normalizedEmail,
-    name: name || normalizedEmail.split('@')[0],
+    name: cleanName,
     passwordHash,
     emailVerified: false,
-    role: 'USER',
+    role: 'USER', // Always default to USER for security
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };
@@ -159,22 +185,22 @@ export async function registerUser(email: string, passwordPlain: string, name?: 
   };
 }
 
-// User Authentication
+// User Authentication Server Logic
 export async function authenticateUser(email: string, passwordPlain: string) {
   const normalizedEmail = email.toLowerCase().trim();
   const user = usersDb[normalizedEmail];
 
   if (!user) {
-    throw new Error('Incorrect email or password.');
+    throw new Error('Email or password is incorrect.');
   }
 
   const isPasswordValid = await bcrypt.compare(passwordPlain, user.passwordHash);
   if (!isPasswordValid) {
-    throw new Error('Incorrect email or password.');
+    throw new Error('Email or password is incorrect.');
   }
 
   if (!user.emailVerified) {
-    throw new Error('Account not verified. Please check your inbox for the verification link.');
+    throw new Error('Please verify your email before signing in.');
   }
 
   user.lastLoginAt = new Date().toISOString();

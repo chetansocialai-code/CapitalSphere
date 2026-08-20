@@ -8,6 +8,7 @@ export default function SignupPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [verificationNotice, setVerificationNotice] = useState<string | null>(null);
@@ -32,6 +33,11 @@ export default function SignupPage() {
       return;
     }
 
+    if (password !== confirmPassword) {
+      setError('Passwords do not match. Please confirm your password.');
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -39,7 +45,7 @@ export default function SignupPage() {
       const res = await fetch(`${apiUrl}/api/v1/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name: name.trim(), email: email.trim().toLowerCase(), password }),
       });
 
       const json = await res.json();
@@ -73,7 +79,7 @@ export default function SignupPage() {
             <ShieldCheck className="w-3.5 h-3.5" /> CREATE ACCOUNT
           </div>
           <h1 className="text-2xl font-extrabold font-sans text-white">
-            Join <span className="text-[#4DA3FF]">CapitalSphere</span>
+            Create Your <span className="text-[#4DA3FF]">CapitalSphere</span> Account
           </h1>
           <p className="text-xs cs-text-sub font-mono">
             Get personalized Watchlists, Portfolio & Market Alerts
@@ -167,6 +173,22 @@ export default function SignupPage() {
               </div>
             </div>
 
+            <div className="space-y-1">
+              <label className="text-xs font-mono font-semibold cs-text-sub">Confirm Password</label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-2.5 w-4 h-4 cs-text-sub" />
+                <input
+                  type="password"
+                  required
+                  minLength={8}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder="••••••••"
+                  className="w-full cs-card text-xs pl-9 pr-4 py-2.5 rounded-xl border focus:border-[#4DA3FF] focus:outline-none transition"
+                />
+              </div>
+            </div>
+
             <button
               type="submit"
               disabled={loading}
@@ -180,7 +202,7 @@ export default function SignupPage() {
         <div className="pt-4 border-t cs-border text-center text-xs font-mono cs-text-sub">
           Already have an account?{' '}
           <Link href="/login" className="text-[#4DA3FF] font-bold hover:underline">
-            Sign In
+            LOGIN
           </Link>
         </div>
       </div>

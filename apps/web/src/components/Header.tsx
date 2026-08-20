@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Search, ShieldCheck, Zap, Menu, X, BarChart3, User, Sun, Moon, Globe, DollarSign, Flame, Code, LogOut, Key, ChevronDown } from 'lucide-react';
+import { Search, ShieldCheck, Zap, Menu, X, BarChart3, User, Sun, Moon, Globe, DollarSign, Flame, Code, LogOut, Key, ChevronDown, UserPlus } from 'lucide-react';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -150,7 +150,7 @@ export function Header() {
             <BarChart3 className="w-3.5 h-3.5 text-[#4DA3FF]" /> Watchlist
           </Link>
 
-          {/* User Account Login / Profile State */}
+          {/* Navigation State: Logged In vs Logged Out */}
           {currentUser ? (
             <div className="relative">
               <button
@@ -175,31 +175,46 @@ export function Header() {
                     onClick={() => setUserDropdownOpen(false)}
                     className="flex items-center gap-2 p-2 hover:bg-slate-500/10 rounded-lg transition"
                   >
-                    <User className="w-4 h-4 text-[#4DA3FF]" /> My Dashboard
+                    <User className="w-4 h-4 text-[#4DA3FF]" /> Dashboard
                   </Link>
                   <Link
                     href="/developers"
                     onClick={() => setUserDropdownOpen(false)}
                     className="flex items-center gap-2 p-2 hover:bg-slate-500/10 rounded-lg transition"
                   >
-                    <Key className="w-4 h-4 text-[#22C58B]" /> My API Keys
+                    <Key className="w-4 h-4 text-[#22C58B]" /> API Keys
+                  </Link>
+                  <Link
+                    href="/settings"
+                    onClick={() => setUserDropdownOpen(false)}
+                    className="flex items-center gap-2 p-2 hover:bg-slate-500/10 rounded-lg transition"
+                  >
+                    <ShieldCheck className="w-4 h-4 text-amber-400" /> Settings
                   </Link>
                   <button
                     onClick={handleLogout}
                     className="w-full flex items-center gap-2 p-2 text-rose-400 hover:bg-rose-500/10 rounded-lg transition text-left"
                   >
-                    <LogOut className="w-4 h-4" /> Sign Out
+                    <LogOut className="w-4 h-4" /> LOG OUT
                   </button>
                 </div>
               )}
             </div>
           ) : (
-            <Link
-              href="/login"
-              className="text-xs bg-[#4DA3FF] hover:bg-[#69B2FF] text-slate-950 font-bold px-4 py-2 rounded-lg shadow-md shadow-[#4DA3FF]/20 transition flex items-center gap-1.5 font-sans"
-            >
-              <User className="w-3.5 h-3.5" /> Sign In
-            </Link>
+            <div className="flex items-center gap-2 font-mono">
+              <Link
+                href="/login"
+                className="text-xs cs-card hover:border-[#4DA3FF] px-3.5 py-2 rounded-lg border transition font-bold"
+              >
+                LOGIN
+              </Link>
+              <Link
+                href="/signup"
+                className="text-xs bg-[#4DA3FF] hover:bg-[#69B2FF] text-slate-950 font-bold px-3.5 py-2 rounded-lg shadow-md shadow-[#4DA3FF]/20 transition flex items-center gap-1 font-sans"
+              >
+                <UserPlus className="w-3.5 h-3.5" /> SIGN UP
+              </Link>
+            </div>
           )}
         </div>
 
