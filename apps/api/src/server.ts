@@ -257,7 +257,24 @@ app.post('/api/v1/auth/logout', (req, res) => {
   res.json({ success: true, message: 'Logged out successfully.' });
 });
 
-// 8. User Watchlist API Endpoints
+// 8. Google OAuth Redirect & Callback
+app.get('/api/v1/auth/google', (req, res) => {
+  const googleClientId = process.env.GOOGLE_CLIENT_ID;
+  if (!googleClientId) {
+    return res.status(400).json({
+      success: false,
+      error: 'Google OAuth credentials not configured in production environment. Please sign in with Email.'
+    });
+  }
+
+  const redirectUri = `${process.env.API_URL || 'http://localhost:4000'}/api/v1/auth/google/callback`;
+  const scope = encodeURIComponent('openid profile email');
+  const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${googleClientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${scope}&access_type=offline`;
+
+  res.redirect(googleAuthUrl);
+});
+
+// 9. User Watchlist API Endpoints
 app.get('/api/v1/watchlist', (req, res) => {
   const authHeader = req.headers.authorization;
   const token = authHeader?.split(' ')[1] || req.cookies?.cs_session;
@@ -311,6 +328,7 @@ app.get('/api/v1/health', (req, res) => {
       redis: 'HEALTHY',
       upstoxFeed: 'LIVE_V3_AUTHENTIC',
       upstoxTokenConfigured: true,
+      googleOauthConfigured: Boolean(process.env.GOOGLE_CLIENT_ID),
       tradingStatus: process.env.TRADING_ENABLED === 'true' ? 'ENABLED' : 'DISABLED_BY_POLICY'
     }
   });
