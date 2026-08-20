@@ -11,6 +11,20 @@ import {
 } from '@capitalsphere/market-data';
 import { UpstoxService } from '@capitalsphere/upstox';
 import { StockQuote } from '@capitalsphere/types';
+import {
+  registerUser,
+  authenticateUser,
+  verifyEmailToken,
+  requestPasswordReset,
+  resetPasswordWithToken,
+  verifyJwtToken,
+  checkRateLimit,
+  registerFailedAttempt,
+  clearRateLimit,
+  getUserWatchlist,
+  addToUserWatchlist,
+  removeFromUserWatchlist
+} from './auth';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -97,10 +111,196 @@ if (fs.existsSync(newsDbPath)) {
 }
 
 // ----------------------------------------------------
+// AUTHENTICATION API ROUTES (EMAIL & JWT EXCLUSIVE)
+// ----------------------------------------------------
+
+// 1. User Signup Endpoint
+app.post('/api/v1/auth/signup', async (req, res) => {
+  const { email, password, name } = req.body;
+  if (!email || !password || password.length < 8) {
+    return res.status(400).json({ success: false, error: 'Valid email and minimum 8-character password required.' });
+  }
+
+  const clientIp = req.ip || '127.0.0.1';
+  if (!checkRateLimit(clientIp)) {
+    return res.status(429).json({ success: false, error: 'Too many signup attempts. Please try again later.' });
+  }
+
+  try {
+    const result = await registerUser(email, password, name);
+    res.json({
+      success: true,
+      message: 'Account created successfully! Verification link sent to your email address.',
+      verificationNotice: 'Check your email for the verification link.',
+      verificationUrl: result.verificationUrl,
+      user: result.user
+    });
+  } catch (err: any) {
+    registerFailedAttempt(clientIp);
+    res.status(400).json({ success: false, error: err.message || 'Signup failed.' });
+  }
+});
+
+// 2. User Login Endpoint
+app.post('/api/v1/auth/login', async (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ success: false, error: 'Email and password are required.' });
+  }
+
+  const rateKey = `${req.ip}_${email}`;
+  if (!checkRateLimit(rateKey)) {
+    return res.status(429).json({ success: false, error: 'Too many login attempts. Please try again later.' });
+  }
+
+  try {
+    const result = await authenticateUser(email, password);
+    clearRateLimit(rateKey);
+
+    // Set Secure HttpOnly Session Cookie
+    res.cookie('cs_session', result.token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 7 * 24 * 60 * 60 * 1000
+    });
+
+    res.json({
+      success: true,
+      user: result.user,
+      token: result.token
+    });
+  } catch (err: any) {
+    registerFailedAttempt(rateKey);
+    res.status(401).json({ success: false, error: err.message || 'Incorrect email or password.' });
+  }
+});
+
+// 3. Email Verification Endpoint
+app.post('/api/v1/auth/verify-email', async (req, res) => {
+  const { token } = req.body;
+  if (!token) {
+    return res.status(400).json({ success: false, error: 'Verification token is missing.' });
+  }
+
+  try {
+    const result = await verifyEmailToken(token);
+
+    res.cookie('cs_session', result.token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 7 * 24 * 60 * 60 * 1000
+    });
+
+    res.json({
+      success: true,
+      message: 'Email address verified successfully! Logging you in...',
+      user: result.user,
+      token: result.token
+    });
+  } catch (err: any) {
+    res.status(400).json({ success: false, error: err.message || 'Email verification failed.' });
+  }
+});
+
+// 4. Password Reset Request
+app.post('/api/v1/auth/forgot-password', async (req, res) => {
+  const { email } = req.body;
+  if (!email) {
+    return res.status(400).json({ success: false, error: 'Email address is required.' });
+  }
+
+  const result = await requestPasswordReset(email);
+  res.json({
+    success: true,
+    message: result.message,
+    resetUrl: result.resetUrl
+  });
+});
+
+// 5. Password Reset Execution
+app.post('/api/v1/auth/reset-password', async (req, res) => {
+  const { token, newPassword } = req.body;
+  if (!token || !newPassword || newPassword.length < 8) {
+    return res.status(400).json({ success: false, error: 'Token and minimum 8-character new password required.' });
+  }
+
+  try {
+    const result = await resetPasswordWithToken(token, newPassword);
+    res.json({ success: true, message: result.message });
+  } catch (err: any) {
+    res.status(400).json({ success: false, error: err.message || 'Password reset failed.' });
+  }
+});
+
+// 6. Current Authenticated Profile
+app.get('/api/v1/auth/me', (req, res) => {
+  const authHeader = req.headers.authorization;
+  const token = authHeader?.split(' ')[1] || req.cookies?.cs_session;
+
+  if (!token) {
+    return res.status(401).json({ success: false, error: 'Authentication required.' });
+  }
+
+  const user = verifyJwtToken(token);
+  if (!user) {
+    return res.status(401).json({ success: false, error: 'Session expired. Please log in again.' });
+  }
+
+  res.json({ success: true, user });
+});
+
+// 7. Logout Endpoint
+app.post('/api/v1/auth/logout', (req, res) => {
+  res.clearCookie('cs_session');
+  res.json({ success: true, message: 'Logged out successfully.' });
+});
+
+// 8. User Watchlist API Endpoints
+app.get('/api/v1/watchlist', (req, res) => {
+  const authHeader = req.headers.authorization;
+  const token = authHeader?.split(' ')[1] || req.cookies?.cs_session;
+  const user = token ? verifyJwtToken(token) : null;
+  const userId = user?.id || 'usr_anonymous';
+
+  const symbols = getUserWatchlist(userId);
+  const items = symbols.map(sym => marketTickers[sym] || { symbol: sym, ltp: 1000, change: 0, changePercent: 0 }).filter(Boolean);
+
+  res.json({ success: true, data: items });
+});
+
+app.post('/api/v1/watchlist/add', (req, res) => {
+  const authHeader = req.headers.authorization;
+  const token = authHeader?.split(' ')[1] || req.cookies?.cs_session;
+  const user = token ? verifyJwtToken(token) : null;
+  if (!user) return res.status(401).json({ success: false, error: 'Authentication required.' });
+
+  const { symbol } = req.body;
+  if (!symbol) return res.status(400).json({ success: false, error: 'Symbol required.' });
+
+  const updated = addToUserWatchlist(user.id, symbol);
+  res.json({ success: true, watchlist: updated });
+});
+
+app.post('/api/v1/watchlist/remove', (req, res) => {
+  const authHeader = req.headers.authorization;
+  const token = authHeader?.split(' ')[1] || req.cookies?.cs_session;
+  const user = token ? verifyJwtToken(token) : null;
+  if (!user) return res.status(401).json({ success: false, error: 'Authentication required.' });
+
+  const { symbol } = req.body;
+  if (!symbol) return res.status(400).json({ success: false, error: 'Symbol required.' });
+
+  const updated = removeFromUserWatchlist(user.id, symbol);
+  res.json({ success: true, watchlist: updated });
+});
+
+// ----------------------------------------------------
 // REST API v1 ROUTES (LIVE UPSTOX V3 EXCLUSIVE)
 // ----------------------------------------------------
 
-// 1. Health check & status
+// Health check & status
 app.get('/api/v1/health', (req, res) => {
   res.json({
     status: 'HEALTHY',
@@ -116,7 +316,7 @@ app.get('/api/v1/health', (req, res) => {
   });
 });
 
-// 2. Markets Snapshot & Tickers (Authentic Upstox V3 Feed)
+// Markets Snapshot & Tickers
 app.get('/api/v1/markets/tickers', async (req, res) => {
   await syncUpstoxLiveQuotes();
   res.json({
@@ -127,7 +327,7 @@ app.get('/api/v1/markets/tickers', async (req, res) => {
   });
 });
 
-// 3. Indian & Global Indices
+// Indian & Global Indices
 app.get('/api/v1/markets/indices', async (req, res) => {
   await syncUpstoxLiveQuotes();
 
@@ -151,7 +351,7 @@ app.get('/api/v1/markets/indices', async (req, res) => {
   });
 });
 
-// 4. Stock detail & Candlestick history
+// Stock detail & Candlestick history
 app.get('/api/v1/stocks/:symbol', (req, res) => {
   const symbol = req.params.symbol.toUpperCase();
   const quote = marketTickers[symbol] || {
@@ -187,7 +387,7 @@ app.get('/api/v1/stocks/:symbol', (req, res) => {
   });
 });
 
-// 5. Option Chain Matrix
+// Option Chain Matrix
 app.get('/api/v1/options/:underlying', (req, res) => {
   const underlying = req.params.underlying.toUpperCase();
   const spotPrice = marketTickers[underlying]?.ltp || 24231.85;
@@ -199,7 +399,7 @@ app.get('/api/v1/options/:underlying', (req, res) => {
   });
 });
 
-// 6. IPO Tracker Center
+// IPO Tracker Center
 app.get('/api/v1/ipo', (req, res) => {
   res.json({
     success: true,
@@ -251,7 +451,7 @@ app.get('/api/v1/ipo', (req, res) => {
   });
 });
 
-// 7. News & Business Journalism Stream
+// News & Business Journalism Stream
 app.get('/api/v1/news', (req, res) => {
   res.json({
     success: true,
@@ -260,13 +460,13 @@ app.get('/api/v1/news', (req, res) => {
   });
 });
 
-// 8. Upstox OAuth Login Flow Redirect
+// Upstox OAuth Login Flow Redirect
 app.get('/api/v1/upstox/login', (req, res) => {
   const authUrl = upstoxClient.getAuthUrl();
   res.redirect(authUrl);
 });
 
-// 9. Upstox OAuth Callback Endpoint
+// Upstox OAuth Callback Endpoint
 app.get('/api/v1/upstox/callback', (req, res) => {
   const code = req.query.code as string;
   res.json({
@@ -315,6 +515,7 @@ server.listen(PORT, () => {
   console.log(`HTTP API: http://localhost:${PORT}/api/v1`);
   console.log(`WebSocket Stream: ws://localhost:${PORT}/stream`);
   console.log(`Upstox Feed: AUTHENTIC LIVE V3 STREAMING`);
+  console.log(`Email Auth: SERVER-SIDE JWT & BCRYPT LIVE`);
   console.log(`Trading Status: TRADING_ENABLED=${process.env.TRADING_ENABLED || 'false'}`);
   console.log(`====================================================`);
 });
