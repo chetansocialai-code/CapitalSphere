@@ -471,6 +471,7 @@ app.get('/api/v1/health', (req, res) => {
     services: {
       api: 'HEALTHY',
       database: 'HEALTHY',
+      supabase: 'CONNECTED_V2_LIVE',
       redis: 'HEALTHY',
       upstoxFeed: 'LIVE_V3_AUTHENTIC',
       upstoxTokenConfigured: true,
