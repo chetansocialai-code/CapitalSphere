@@ -1,7 +1,6 @@
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -36,22 +35,22 @@ enum IpoStatus {
 }
 
 model User {
-  id           String         @id @default(uuid())
-  email        String         @unique
-  passwordHash String
-  name         String
-  emailVerified Boolean       @default(true)
-  lastLoginAt  DateTime?
-  role         Role           @default(USER)
-  avatarUrl    String?
-  createdAt    DateTime       @default(now())
-  updatedAt    DateTime       @updatedAt
-  articles     Article[]      @relation("AuthorArticles")
-  watchlists   Watchlist[]
-  alerts       Alert[]
-  portfolios   Portfolio[]
+  id            String         @id @default(uuid())
+  email         String         @unique
+  passwordHash  String
+  name          String
+  emailVerified Boolean        @default(true)
+  lastLoginAt   DateTime?
+  role          Role           @default(USER)
+  avatarUrl     String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  articles      Article[]      @relation("AuthorArticles")
+  watchlists    Watchlist[]
+  alerts        Alert[]
+  portfolios    Portfolio[]
   savedArticles SavedArticle[]
-  auditLogs    AuditLog[]
+  auditLogs     AuditLog[]
 }
 
 model VerificationToken {
@@ -69,7 +68,6 @@ model PasswordResetToken {
   expiresAt DateTime
   createdAt DateTime @default(now())
 }
-
 
 model Category {
   id          String    @id @default(uuid())
@@ -177,13 +175,13 @@ model Ipo {
 }
 
 model Watchlist {
-  id        String          @id @default(uuid())
+  id        String   @id @default(uuid())
   userId    String
-  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   name      String
   symbols   String[]
-  createdAt DateTime        @default(now())
-  updatedAt DateTime        @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Alert {
@@ -200,12 +198,12 @@ model Alert {
 }
 
 model AlertHistory {
-  id          String   @id @default(uuid())
-  alertId     String
-  alert       Alert    @relation(fields: [alertId], references: [id], onDelete: Cascade)
-  symbol      String
+  id           String   @id @default(uuid())
+  alertId      String
+  alert        Alert    @relation(fields: [alertId], references: [id], onDelete: Cascade)
+  symbol       String
   triggerPrice Float
-  triggeredAt DateTime @default(now())
+  triggeredAt  DateTime @default(now())
 }
 
 model Portfolio {
@@ -239,12 +237,11 @@ model NewsletterSubscriber {
 model Advertisement {
   id        String   @id @default(uuid())
   title     String
-  placement String   // e.g. HEADER, SIDEBAR, INLINE, FOOTER
   imageUrl  String
   targetUrl String
+  placement String
   active    Boolean  @default(true)
-  impressions Int    @default(0)
-  clicks      Int    @default(0)
+  createdAt DateTime @default(now())
 }
 
 model AuditLog {
@@ -252,7 +249,7 @@ model AuditLog {
   userId    String?
   user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
   action    String
-  details   String   @db.Text
+  details   String?
   ipAddress String?
   createdAt DateTime @default(now())
 }
