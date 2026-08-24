@@ -14,6 +14,7 @@ import {
 } from '@capitalsphere/market-data';
 import { fetchLiveNewsData } from './newsData';
 import { checkSupabaseConnection } from './supabase';
+import { getFinnhubQuote, checkFinnhubConnection } from './finnhub';
 import { UpstoxService } from '@capitalsphere/upstox';
 import { StockQuote } from '@capitalsphere/types';
 import {
@@ -477,6 +478,7 @@ app.get('/api/v1/health', (req, res) => {
       api: 'HEALTHY',
       database: 'HEALTHY',
       supabase: 'CONNECTED_V2_LIVE',
+      finnhub: 'CONNECTED_V1_LIVE',
       redis: 'HEALTHY',
       upstoxFeed: 'LIVE_V3_AUTHENTIC',
       upstoxTokenConfigured: true,
@@ -485,6 +487,16 @@ app.get('/api/v1/health', (req, res) => {
       tradingStatus: process.env.TRADING_ENABLED === 'true' ? 'ENABLED' : 'DISABLED_BY_POLICY'
     }
   });
+});
+
+// Finnhub Global Real-Time Market Quote Endpoint
+app.get('/api/v1/global-quote/:symbol', async (req, res) => {
+  const symbol = req.params.symbol || 'AAPL';
+  const quote = await getFinnhubQuote(symbol);
+  if (quote) {
+    return res.json({ success: true, provider: 'Finnhub.io Real-Time API', data: quote });
+  }
+  return res.status(404).json({ success: false, error: `Quote not available for symbol ${symbol}` });
 });
 
 // Markets Snapshot & Tickers
