@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const FINNHUB_SECRET = process.env.WEBHOOK_SECRET || 'da646s1r01qtngrecd70';
+const FINNHUB_SECRET = process.env.WEBHOOK_SECRET || 'da65pipr01qtngrehja0';
 
 export async function POST(request: Request) {
   // Extract X-Finnhub-Secret header (case-insensitive)

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const FINNHUB_SECRET = process.env.WEBHOOK_SECRET || 'da646s1r01qtngrecd70';
+const FINNHUB_SECRET = process.env.WEBHOOK_SECRET || 'da65pipr01qtngrehja0';
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
