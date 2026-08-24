@@ -5,6 +5,7 @@ import './globals.css';
 import { Header } from '@/components/Header';
 import { MarketTicker } from '@/components/MarketTicker';
 import { Footer } from '@/components/Footer';
+import { ThemeToggleFloating } from '@/components/ThemeToggleFloating';
 
 export const metadata: Metadata = {
   title: 'CapitalSphere — Markets. Money. Business. Intelligence.',
@@ -37,6 +38,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <ThemeToggleFloating />
       </body>
     </html>
   );
