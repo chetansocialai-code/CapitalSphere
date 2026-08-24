@@ -6,6 +6,20 @@ const VALID_SECRETS = [
   'da646s1r01qtngrecd70',
 ].filter(Boolean);
 
+export async function GET() {
+  return NextResponse.json(
+    {
+      success: true,
+      status: 'ACTIVE',
+      webhookEndpoint: 'https://www.capitalsphere.online/markets',
+      secretHeader: 'X-Finnhub-Secret',
+      secretConfigured: true,
+      timestamp: new Date().toISOString(),
+    },
+    { status: 200 }
+  );
+}
+
 export async function POST(request: Request) {
   const secretHeader =
     request.headers.get('x-finnhub-secret') ||
@@ -23,7 +37,7 @@ export async function POST(request: Request) {
   return NextResponse.json(
     {
       success: true,
-      message: 'Finnhub webhook event acknowledged on /markets',
+      message: 'Finnhub webhook event acknowledged',
       timestamp: new Date().toISOString(),
     },
     { status: 200 }
@@ -32,4 +46,13 @@ export async function POST(request: Request) {
 
 export async function HEAD() {
   return new Response(null, { status: 200 });
+}
+
+export async function OPTIONS() {
+  return new Response(null, {
+    status: 200,
+    headers: {
+      Allow: 'GET, POST, HEAD, OPTIONS',
+    },
+  });
 }
