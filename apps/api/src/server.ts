@@ -499,6 +499,32 @@ app.get('/api/v1/global-quote/:symbol', async (req, res) => {
   return res.status(404).json({ success: false, error: `Quote not available for symbol ${symbol}` });
 });
 
+// Finnhub & Market Event Webhook Receiver Endpoint
+const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || 'da646s1r01qtngrecd70';
+
+app.post(['/api/v1/webhooks/finnhub', '/api/v1/webhooks/market-events', '/markets'], (req, res) => {
+  const secretHeader = req.headers['x-finnhub-secret'] || req.headers['x-webhook-secret'] || req.query.secret;
+  console.log('⚡ Incoming Market Webhook Payload Received:', req.body);
+
+  const payload = {
+    type: 'WEBHOOK_EVENT',
+    timestamp: new Date().toISOString(),
+    event: req.body || { status: 'ping' },
+  };
+
+  wss.clients.forEach((client) => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(JSON.stringify(payload));
+    }
+  });
+
+  return res.json({
+    success: true,
+    message: 'Webhook event processed and broadcasted to WebSocket stream',
+    timestamp: new Date().toISOString(),
+  });
+});
+
 // Markets Snapshot & Tickers
 app.get('/api/v1/markets/tickers', async (req, res) => {
   await syncUpstoxLiveQuotes();
