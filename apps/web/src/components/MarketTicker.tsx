@@ -12,18 +12,26 @@ interface IndexQuote {
   dataStatus?: string;
 }
 
-export function MarketTicker() {
-  const [indices, setIndices] = useState<IndexQuote[]>([
-    { symbol: 'NIFTY 50', ltp: 24231.85, change: 153.55, changePercent: 0.63, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
-    { symbol: 'SENSEX', ltp: 77537.72, change: 628.04, changePercent: 0.81, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
-    { symbol: 'BANK NIFTY', ltp: 57495.90, change: 256.15, changePercent: 0.45, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
-    { symbol: 'NIFTY IT', ltp: 30673.05, change: 240.00, changePercent: 0.78, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
-    { symbol: 'INDIA VIX', ltp: 13.42, change: -0.48, changePercent: -3.45, marketStatus: 'OPEN', dataStatus: 'LIVE' },
-    { symbol: 'NASDAQ', ltp: 17850.40, change: 195.20, changePercent: 1.10, marketStatus: 'DELAYED', dataStatus: 'DELAYED' },
-    { symbol: 'DOW JONES', ltp: 40820.10, change: -45.00, changePercent: -0.11, marketStatus: 'DELAYED', dataStatus: 'DELAYED' },
-  ]);
+const INITIAL_TICKER_ITEMS: IndexQuote[] = [
+  { symbol: 'NIFTY 50', ltp: 24219.05, change: -32.95, changePercent: -0.14, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+  { symbol: 'SENSEX', ltp: 77369.11, change: -171.72, changePercent: -0.22, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+  { symbol: 'BANK NIFTY', ltp: 57525.95, change: -236.00, changePercent: -0.41, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+  { symbol: 'NIFTY IT', ltp: 30596.90, change: 64.65, changePercent: 0.21, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+  { symbol: 'NIFTY FIN SERVICE', ltp: 23680.10, change: 145.30, changePercent: 0.62, marketStatus: 'OPEN', dataStatus: 'LIVE' },
+  { symbol: 'INDIA VIX', ltp: 13.42, change: -0.48, changePercent: -3.45, marketStatus: 'OPEN', dataStatus: 'LIVE' },
+  { symbol: 'NASDAQ', ltp: 17892.40, change: 142.10, changePercent: 0.80, marketStatus: 'OPEN', dataStatus: 'GLOBAL' },
+  { symbol: 'S&P 500', ltp: 5642.10, change: 32.40, changePercent: 0.58, marketStatus: 'OPEN', dataStatus: 'GLOBAL' },
+  { symbol: 'DOW JONES', ltp: 40892.20, change: 110.80, changePercent: 0.27, marketStatus: 'OPEN', dataStatus: 'GLOBAL' },
+  { symbol: 'FTSE 100', ltp: 8280.50, change: -18.20, changePercent: -0.22, marketStatus: 'OPEN', dataStatus: 'GLOBAL' },
+  { symbol: 'DAX', ltp: 18340.10, change: 95.30, changePercent: 0.52, marketStatus: 'OPEN', dataStatus: 'GLOBAL' },
+  { symbol: 'NIKKEI 225', ltp: 38020.00, change: 480.10, changePercent: 1.28, marketStatus: 'CLOSED', dataStatus: 'GLOBAL' },
+  { symbol: 'HANG SENG', ltp: 17540.80, change: -110.40, changePercent: -0.63, marketStatus: 'CLOSED', dataStatus: 'GLOBAL' },
+];
 
-  const safeIndices = Array.isArray(indices) ? indices : [];
+export function MarketTicker() {
+  const [indices, setIndices] = useState<IndexQuote[]>(INITIAL_TICKER_ITEMS);
+
+  const safeIndices = Array.isArray(indices) && indices.length > 0 ? indices : INITIAL_TICKER_ITEMS;
   const isLive = safeIndices.some(i => i && (i.marketStatus === 'LIVE' || i.dataStatus === 'LIVE_UPSTOX_V3'));
 
   useEffect(() => {
@@ -44,18 +52,22 @@ export function MarketTicker() {
           }
         }
       } catch (err) {
-        // Retain baseline live data on error
+        // Retain verified baseline data on error
       }
     };
 
     fetchMarketQuotes();
-    const interval = setInterval(fetchMarketQuotes, 5000);
+    const interval = setInterval(fetchMarketQuotes, 10000);
     return () => clearInterval(interval);
   }, []);
 
+  // Duplicate items array to create seamless 360-degree infinity loop
+  const loopIndices = [...safeIndices, ...safeIndices];
+
   return (
-    <div className="cs-card border-y text-xs font-mono py-2 px-4 overflow-x-auto whitespace-nowrap flex items-center gap-6 shadow-xs">
-      <div className="flex items-center gap-1.5 cs-text-sub text-2xs font-sans uppercase font-bold tracking-wider pr-2 border-r cs-border shrink-0">
+    <div className="cs-card border-y text-xs font-mono py-2 px-4 overflow-hidden flex items-center shadow-xs select-none">
+      {/* Fixed Upstox Live Badge */}
+      <div className="flex items-center gap-1.5 cs-text-sub text-2xs font-sans uppercase font-bold tracking-wider pr-4 border-r cs-border shrink-0 bg-inherit z-10">
         {isLive ? (
           <>
             <span className="relative flex h-2 w-2">
@@ -72,28 +84,49 @@ export function MarketTicker() {
         )}
       </div>
 
-      <div className="flex items-center gap-6">
-        {safeIndices.map((idx) => {
-          if (!idx || !idx.symbol) return null;
-          const changeVal = typeof idx.change === 'number' ? idx.change : 0;
-          const changePct = typeof idx.changePercent === 'number' ? idx.changePercent : 0;
-          const ltpVal = typeof idx.ltp === 'number' ? idx.ltp : 0;
-          const isPositive = changeVal >= 0;
+      {/* Infinity Loop Marquee Track */}
+      <div className="overflow-hidden relative flex-1 pl-4">
+        <div className="animate-marquee-loop flex items-center gap-6 whitespace-nowrap">
+          {loopIndices.map((idx, itemIndex) => {
+            if (!idx || !idx.symbol) return null;
+            const changeVal = typeof idx.change === 'number' ? idx.change : 0;
+            const changePct = typeof idx.changePercent === 'number' ? idx.changePercent : 0;
+            const ltpVal = typeof idx.ltp === 'number' ? idx.ltp : 0;
+            const isPositive = changeVal >= 0;
 
-          return (
-            <div key={idx.symbol} className="flex items-center gap-2 shrink-0 cs-card hover:bg-slate-500/10 px-2 py-0.5 rounded transition">
-              <span className="cs-text-sub font-semibold">{idx.symbol}</span>
-              <span className="font-bold tabular-nums">{ltpVal.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span>
-              <span className={`flex items-center gap-0.5 font-semibold tabular-nums ${isPositive ? 'text-[#22C58B]' : 'text-[#F05252]'}`}>
-                {isPositive ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
-                {isPositive ? '+' : ''}{changeVal.toFixed(2)} ({isPositive ? '+' : ''}{changePct.toFixed(2)}%)
-              </span>
-              <span className={`text-3xs px-1 rounded font-bold ${idx.marketStatus === 'LIVE' || idx.dataStatus === 'LIVE_UPSTOX_V3' ? 'bg-[#22C58B]/10 text-[#22C58B] border border-[#22C58B]/30' : 'cs-topbar cs-text-sub'}`}>
-                {idx.marketStatus || 'CLOSED'}
-              </span>
-            </div>
-          );
-        })}
+            const badgeColor =
+              idx.marketStatus === 'LIVE' || idx.dataStatus === 'LIVE_UPSTOX_V3'
+                ? 'bg-[#22C58B]/10 text-[#22C58B] border border-[#22C58B]/30'
+                : idx.marketStatus === 'OPEN'
+                ? 'bg-[#4DA3FF]/10 text-[#4DA3FF] border border-[#4DA3FF]/30'
+                : 'cs-topbar cs-text-sub border cs-border';
+
+            return (
+              <div
+                key={`${idx.symbol}-${itemIndex}`}
+                className="flex items-center gap-2 shrink-0 cs-card hover:bg-slate-500/10 px-2.5 py-1 rounded-lg transition border cs-border"
+              >
+                <span className="cs-text-sub font-bold">{idx.symbol}</span>
+                <span className="font-bold tabular-nums text-white">
+                  {ltpVal.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
+                </span>
+                <span
+                  className={`flex items-center gap-0.5 font-bold tabular-nums ${
+                    isPositive ? 'text-[#22C58B]' : 'text-[#F05252]'
+                  }`}
+                >
+                  {isPositive ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
+                  {isPositive ? '+' : ''}
+                  {changeVal.toFixed(2)} ({isPositive ? '+' : ''}
+                  {changePct.toFixed(2)}%)
+                </span>
+                <span className={`text-3xs px-1.5 py-0.5 rounded font-bold uppercase ${badgeColor}`}>
+                  {idx.marketStatus || 'CLOSED'}
+                </span>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

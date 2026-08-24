@@ -86,6 +86,27 @@ body {
   border-color: var(--border-color);
 }
 
+/* Infinite Marquee Ticker Keyframes & Animation Class */
+@keyframes marqueeLoop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-loop {
+  display: flex;
+  width: max-content;
+  animation: marqueeLoop 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-loop:hover {
+  animation-play-state: paused;
+}
+
 /* Dynamic Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 6px;
