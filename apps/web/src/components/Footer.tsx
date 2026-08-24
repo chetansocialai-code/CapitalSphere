@@ -86,8 +86,10 @@ export function Footer() {
         <div>
           © 2026 <span className="font-bold text-white">CAPITALSPHERE</span>. Markets • Money • Business • Intelligence.
         </div>
-        <div className="cs-text-sub text-3xs flex items-center gap-4">
-          <span>Upstox V3 Feed Connected</span>
+        <div className="cs-text-sub text-3xs flex flex-wrap items-center gap-4">
+          <span className="text-white font-bold">Admin Desk: <a href="mailto:admin@capitalsphere.online" className="text-[#4DA3FF] hover:underline">admin@capitalsphere.online</a></span>
+          <span>•</span>
+          <span className="text-white font-bold">Investor Desk: <a href="mailto:investor@capitalsphere.online" className="text-[#22C58B] hover:underline">investor@capitalsphere.online</a></span>
           <span>•</span>
           <span>Google AdSense ID: ca-pub-2416474909531167</span>
         </div>
