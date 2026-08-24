@@ -12,12 +12,7 @@ export function middleware(request: NextRequest) {
   const method = request.method;
 
   if (pathname === '/markets' || pathname === '/markets/') {
-    // Allow GET and HEAD through to route.ts
-    if (method === 'GET' || method === 'HEAD' || method === 'OPTIONS') {
-      return NextResponse.next();
-    }
-
-    // Handle POST webhook requests
+    // Handle POST webhook requests directly in middleware to allow /markets to be a UI page for GET requests
     if (method === 'POST') {
       const secretHeader =
         request.headers.get('x-finnhub-secret') ||
@@ -28,9 +23,18 @@ export function middleware(request: NextRequest) {
         return NextResponse.json({ error: 'Unauthorized Webhook Secret' }, { status: 401 });
       }
 
-      // Let it fall through to route.ts POST handler for proper handling
-      return NextResponse.next();
+      return NextResponse.json(
+        {
+          success: true,
+          message: 'Finnhub webhook event acknowledged on /markets',
+          timestamp: new Date().toISOString(),
+        },
+        { status: 200 }
+      );
     }
+
+    // Allow GET, HEAD, OPTIONS to pass through to app/markets/page.tsx
+    return NextResponse.next();
   }
 
   return NextResponse.next();
