@@ -5,6 +5,7 @@ import { StockChart } from '@/components/StockChart';
 import { Screener } from '@/components/Screener';
 import { IPOCenter } from '@/components/IPOCenter';
 import { CapitalSphereAiIntelligence } from '@/components/CapitalSphereAiIntelligence';
+import { AdSenseBanner } from '@/components/AdSenseBanner';
 import Link from 'next/link';
 import { ArrowUpRight, TrendingUp, BookOpen, Layers } from 'lucide-react';
 
@@ -43,6 +44,9 @@ export default function HomePage() {
     <div className="space-y-8">
       {/* 1. Hero Section (Breaking News + Featured Story + Market Movers) */}
       <HeroSection />
+
+      {/* Google AdSense Banner Slot */}
+      <AdSenseBanner slot="8646094970" />
 
       {/* 2. CapitalSphere AI Intelligence Hub */}
       <CapitalSphereAiIntelligence />
