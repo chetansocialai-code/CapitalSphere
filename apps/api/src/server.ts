@@ -12,6 +12,8 @@ import {
   generateOptionChain,
   generateCandleData
 } from '@capitalsphere/market-data';
+import { fetchLiveNewsData } from './newsData';
+import { checkSupabaseConnection } from './supabase';
 import { UpstoxService } from '@capitalsphere/upstox';
 import { StockQuote } from '@capitalsphere/types';
 import {
@@ -620,13 +622,25 @@ app.get('/api/v1/ipo', (req, res) => {
   });
 });
 
-// News & Business Journalism Stream
-app.get('/api/v1/news', (req, res) => {
-  res.json({
-    success: true,
-    count: newsArticles.length,
-    data: newsArticles
-  });
+// News & Business Journalism Stream (NewsData.io Live Feed API)
+app.get('/api/v1/news', async (req, res) => {
+  try {
+    const liveArticles = await fetchLiveNewsData();
+    const articles = (liveArticles && liveArticles.length > 0) ? liveArticles : newsArticles;
+    res.json({
+      success: true,
+      provider: 'NewsData.io Live API',
+      count: articles.length,
+      data: articles
+    });
+  } catch (err) {
+    res.json({
+      success: true,
+      provider: 'CapitalSphere News Engine',
+      count: newsArticles.length,
+      data: newsArticles
+    });
+  }
 });
 
 // Upstox OAuth Login Flow Redirect
