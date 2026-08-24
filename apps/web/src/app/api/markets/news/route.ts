@@ -3,22 +3,25 @@ import { NextResponse } from 'next/server';
 const FINNHUB_SECRET = process.env.WEBHOOK_SECRET || 'da646s1r01qtngrecd70';
 
 export async function POST(request: Request) {
-  // Extract X-Finnhub-Secret header for security verification
-  const secretHeader = request.headers.get('x-finnhub-secret') || request.headers.get('X-Finnhub-Secret');
+  // Extract X-Finnhub-Secret header (case-insensitive)
+  const secretHeader =
+    request.headers.get('x-finnhub-secret') ||
+    request.headers.get('X-Finnhub-Secret') ||
+    request.headers.get('X-FINNHUB-SECRET');
 
-  // Verify secret header if provided
+  // Verify secret if header is present
   if (secretHeader && secretHeader !== FINNHUB_SECRET) {
     return NextResponse.json({ error: 'Unauthorized Webhook Secret' }, { status: 401 });
   }
 
-  // Acknowledge receipt immediately with 200 OK to prevent Finnhub timeouts
-  try {
-    const body = await request.json();
-    console.log('⚡ Finnhub News Webhook Event Received:', body);
-  } catch (e) {
-    console.log('⚡ Finnhub Webhook Ping Received');
-  }
+  // Fire-and-forget async body parsing to prevent any execution delay or timeout
+  request.json().then((body) => {
+    console.log('⚡ Finnhub News Webhook Event Processed:', body);
+  }).catch(() => {
+    console.log('⚡ Finnhub News Webhook Ping Acknowledged');
+  });
 
+  // Return immediate 200 OK HTTP acknowledgment response
   return NextResponse.json(
     {
       success: true,
@@ -30,10 +33,18 @@ export async function POST(request: Request) {
 }
 
 export async function GET() {
-  return NextResponse.json({
-    status: 'ACTIVE',
-    webhookEndpoint: 'https://www.capitalsphere.online/api/markets/news',
-    secretHeader: 'X-Finnhub-Secret',
-    secretConfigured: true,
-  });
+  return NextResponse.json(
+    {
+      status: 'ACTIVE',
+      webhookEndpoint: 'https://www.capitalsphere.online/api/markets/news',
+      secretHeader: 'X-Finnhub-Secret',
+      secretConfigured: true,
+      timestamp: new Date().toISOString(),
+    },
+    { status: 200 }
+  );
+}
+
+export async function HEAD() {
+  return new Response(null, { status: 200 });
 }
