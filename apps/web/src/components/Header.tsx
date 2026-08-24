@@ -61,7 +61,7 @@ export function Header() {
   const mainNav = [
     { name: 'MARKETS', href: '/markets' },
     { name: 'NEWS', href: '/news' },
-    { name: 'STOCKS', href: '/stocks/reliance' },
+    { name: 'STOCKS', href: '/stocks' },
     { name: 'OPTIONS', href: '/options' },
     { name: 'IPO', href: '/ipo' },
     { name: 'COMPANIES', href: '/companies/reliance-industries' },
