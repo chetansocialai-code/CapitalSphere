@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { MarketTicker } from '@/components/MarketTicker';
@@ -24,6 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="272885"
+          async
+          data-cfasync="false"
+        ></script>
         <meta name="google-adsense-account" content="ca-pub-2416474909531167" />
         <script
           async
