@@ -1,7 +1,11 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const FINNHUB_SECRET = process.env.WEBHOOK_SECRET || 'da65pipr01qtngrehja0';
+const VALID_SECRETS = [
+  process.env.WEBHOOK_SECRET,
+  'da65pipr01qtngrehja0',
+  'da646s1r01qtngrecd70',
+].filter(Boolean);
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
@@ -13,7 +17,7 @@ export function middleware(request: NextRequest) {
       request.headers.get('X-Finnhub-Secret') ||
       request.headers.get('X-FINNHUB-SECRET');
 
-    if (secretHeader && secretHeader !== FINNHUB_SECRET) {
+    if (secretHeader && !VALID_SECRETS.includes(secretHeader)) {
       return NextResponse.json({ error: 'Unauthorized Webhook Secret' }, { status: 401 });
     }
 
