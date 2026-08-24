@@ -502,7 +502,7 @@ app.get('/api/v1/global-quote/:symbol', async (req, res) => {
 // Finnhub & Market Event Webhook Receiver Endpoint
 const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || 'da646s1r01qtngrecd70';
 
-app.post(['/api/v1/webhooks/finnhub', '/api/v1/webhooks/market-events', '/markets'], (req, res) => {
+app.post(['/api/markets/news', '/api/v1/webhooks/finnhub', '/api/v1/webhooks/market-events', '/markets'], (req, res) => {
   const secretHeader = req.headers['x-finnhub-secret'] || req.headers['x-webhook-secret'] || req.query.secret;
   console.log('⚡ Incoming Market Webhook Payload Received:', req.body);
 
