@@ -23,12 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <Script
+        <meta name="google-adsense-account" content="ca-pub-2416474909531167" />
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2416474909531167"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        ></script>
       </head>
       <body className="bg-[#070A0F] text-[#F4F7FA] min-h-screen flex flex-col font-sans antialiased">
         <Header />

@@ -527,8 +527,8 @@
   ],
   "ingestion_logs": [
     {
-      "id": "log-1787310030593",
-      "timestamp": "2026-08-21T11:00:30.593Z",
+      "id": "log-1787555729023",
+      "timestamp": "2026-08-24T07:15:29.023Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -537,8 +537,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787310030591",
-      "timestamp": "2026-08-21T11:00:30.591Z",
+      "id": "log-1787555729022",
+      "timestamp": "2026-08-24T07:15:29.022Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -547,8 +547,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787310030588",
-      "timestamp": "2026-08-21T11:00:30.588Z",
+      "id": "log-1787555729020",
+      "timestamp": "2026-08-24T07:15:29.020Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -557,8 +557,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787310030587",
-      "timestamp": "2026-08-21T11:00:30.587Z",
+      "id": "log-1787555729019",
+      "timestamp": "2026-08-24T07:15:29.019Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -567,8 +567,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787310030585",
-      "timestamp": "2026-08-21T11:00:30.585Z",
+      "id": "log-1787555729018",
+      "timestamp": "2026-08-24T07:15:29.018Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -577,8 +577,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787310030584",
-      "timestamp": "2026-08-21T11:00:30.584Z",
+      "id": "log-1787555729017",
+      "timestamp": "2026-08-24T07:15:29.017Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -587,8 +587,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787310030582",
-      "timestamp": "2026-08-21T11:00:30.582Z",
+      "id": "log-1787555729015",
+      "timestamp": "2026-08-24T07:15:29.015Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -597,8 +597,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787309130581",
-      "timestamp": "2026-08-21T10:45:30.581Z",
+      "id": "log-1787554829025",
+      "timestamp": "2026-08-24T07:00:29.025Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -607,8 +607,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787309130580",
-      "timestamp": "2026-08-21T10:45:30.580Z",
+      "id": "log-1787554829024",
+      "timestamp": "2026-08-24T07:00:29.024Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -617,8 +617,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787309130578",
-      "timestamp": "2026-08-21T10:45:30.578Z",
+      "id": "log-1787554829022",
+      "timestamp": "2026-08-24T07:00:29.022Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -627,8 +627,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787309130577",
-      "timestamp": "2026-08-21T10:45:30.577Z",
+      "id": "log-1787554829021",
+      "timestamp": "2026-08-24T07:00:29.021Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -637,8 +637,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787309130576",
-      "timestamp": "2026-08-21T10:45:30.576Z",
+      "id": "log-1787554829020",
+      "timestamp": "2026-08-24T07:00:29.020Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -647,8 +647,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787309130575",
-      "timestamp": "2026-08-21T10:45:30.575Z",
+      "id": "log-1787554829018",
+      "timestamp": "2026-08-24T07:00:29.018Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -657,8 +657,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787309130572",
-      "timestamp": "2026-08-21T10:45:30.572Z",
+      "id": "log-1787554829016",
+      "timestamp": "2026-08-24T07:00:29.016Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -667,8 +667,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787308230585",
-      "timestamp": "2026-08-21T10:30:30.585Z",
+      "id": "log-1787553929026",
+      "timestamp": "2026-08-24T06:45:29.026Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -677,8 +677,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787308230584",
-      "timestamp": "2026-08-21T10:30:30.584Z",
+      "id": "log-1787553929025",
+      "timestamp": "2026-08-24T06:45:29.025Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -687,8 +687,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787308230581",
-      "timestamp": "2026-08-21T10:30:30.581Z",
+      "id": "log-1787553929024",
+      "timestamp": "2026-08-24T06:45:29.024Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -697,8 +697,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787308230580",
-      "timestamp": "2026-08-21T10:30:30.580Z",
+      "id": "log-1787553929023",
+      "timestamp": "2026-08-24T06:45:29.023Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -707,8 +707,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787308230579",
-      "timestamp": "2026-08-21T10:30:30.579Z",
+      "id": "log-1787553929022",
+      "timestamp": "2026-08-24T06:45:29.022Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -717,8 +717,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787308230578",
-      "timestamp": "2026-08-21T10:30:30.578Z",
+      "id": "log-1787553929021",
+      "timestamp": "2026-08-24T06:45:29.021Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -727,8 +727,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787308230575",
-      "timestamp": "2026-08-21T10:30:30.575Z",
+      "id": "log-1787553929018",
+      "timestamp": "2026-08-24T06:45:29.018Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -737,8 +737,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787307330592",
-      "timestamp": "2026-08-21T10:15:30.592Z",
+      "id": "log-1787553029026",
+      "timestamp": "2026-08-24T06:30:29.026Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -747,8 +747,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787307330590",
-      "timestamp": "2026-08-21T10:15:30.590Z",
+      "id": "log-1787553029025",
+      "timestamp": "2026-08-24T06:30:29.025Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -757,8 +757,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787307330589",
-      "timestamp": "2026-08-21T10:15:30.589Z",
+      "id": "log-1787553029023",
+      "timestamp": "2026-08-24T06:30:29.023Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -767,8 +767,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787307330588",
-      "timestamp": "2026-08-21T10:15:30.588Z",
+      "id": "log-1787553029022",
+      "timestamp": "2026-08-24T06:30:29.022Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -777,8 +777,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787307330586",
-      "timestamp": "2026-08-21T10:15:30.586Z",
+      "id": "log-1787553029021",
+      "timestamp": "2026-08-24T06:30:29.021Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -787,8 +787,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787307330585",
-      "timestamp": "2026-08-21T10:15:30.585Z",
+      "id": "log-1787553029020",
+      "timestamp": "2026-08-24T06:30:29.020Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -797,8 +797,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787307330582",
-      "timestamp": "2026-08-21T10:15:30.582Z",
+      "id": "log-1787553029017",
+      "timestamp": "2026-08-24T06:30:29.017Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -807,8 +807,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787306430583",
-      "timestamp": "2026-08-21T10:00:30.583Z",
+      "id": "log-1787552129022",
+      "timestamp": "2026-08-24T06:15:29.022Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -817,8 +817,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787306430581",
-      "timestamp": "2026-08-21T10:00:30.581Z",
+      "id": "log-1787552129021",
+      "timestamp": "2026-08-24T06:15:29.021Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -827,8 +827,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787306430579",
-      "timestamp": "2026-08-21T10:00:30.579Z",
+      "id": "log-1787552129019",
+      "timestamp": "2026-08-24T06:15:29.019Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -837,8 +837,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787306430577",
-      "timestamp": "2026-08-21T10:00:30.578Z",
+      "id": "log-1787552129018",
+      "timestamp": "2026-08-24T06:15:29.018Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -847,8 +847,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787306430576",
-      "timestamp": "2026-08-21T10:00:30.576Z",
+      "id": "log-1787552129017",
+      "timestamp": "2026-08-24T06:15:29.017Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -857,8 +857,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787306430575",
-      "timestamp": "2026-08-21T10:00:30.575Z",
+      "id": "log-1787552129015",
+      "timestamp": "2026-08-24T06:15:29.015Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -867,8 +867,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787306430573",
-      "timestamp": "2026-08-21T10:00:30.573Z",
+      "id": "log-1787552129012",
+      "timestamp": "2026-08-24T06:15:29.012Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -877,8 +877,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787305530575",
-      "timestamp": "2026-08-21T09:45:30.575Z",
+      "id": "log-1787551229078",
+      "timestamp": "2026-08-24T06:00:29.078Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -887,8 +887,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787305530573",
-      "timestamp": "2026-08-21T09:45:30.573Z",
+      "id": "log-1787551229076",
+      "timestamp": "2026-08-24T06:00:29.076Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -897,8 +897,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787305530570",
-      "timestamp": "2026-08-21T09:45:30.570Z",
+      "id": "log-1787551229073",
+      "timestamp": "2026-08-24T06:00:29.073Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -907,8 +907,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787305530569",
-      "timestamp": "2026-08-21T09:45:30.569Z",
+      "id": "log-1787551229073",
+      "timestamp": "2026-08-24T06:00:29.073Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -917,8 +917,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787305530568",
-      "timestamp": "2026-08-21T09:45:30.568Z",
+      "id": "log-1787551229072",
+      "timestamp": "2026-08-24T06:00:29.072Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -927,8 +927,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787305530567",
-      "timestamp": "2026-08-21T09:45:30.567Z",
+      "id": "log-1787551229069",
+      "timestamp": "2026-08-24T06:00:29.069Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -937,8 +937,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787305530562",
-      "timestamp": "2026-08-21T09:45:30.562Z",
+      "id": "log-1787551229004",
+      "timestamp": "2026-08-24T06:00:29.004Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -947,8 +947,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787304630584",
-      "timestamp": "2026-08-21T09:30:30.584Z",
+      "id": "log-1787550283058",
+      "timestamp": "2026-08-24T05:44:43.058Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -957,8 +957,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787304630583",
-      "timestamp": "2026-08-21T09:30:30.583Z",
+      "id": "log-1787550283057",
+      "timestamp": "2026-08-24T05:44:43.057Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -967,8 +967,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787304630581",
-      "timestamp": "2026-08-21T09:30:30.581Z",
+      "id": "log-1787550283055",
+      "timestamp": "2026-08-24T05:44:43.055Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -977,8 +977,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787304630579",
-      "timestamp": "2026-08-21T09:30:30.579Z",
+      "id": "log-1787550283053",
+      "timestamp": "2026-08-24T05:44:43.053Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -987,8 +987,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787304630578",
-      "timestamp": "2026-08-21T09:30:30.578Z",
+      "id": "log-1787550283053",
+      "timestamp": "2026-08-24T05:44:43.053Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -997,8 +997,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787304630577",
-      "timestamp": "2026-08-21T09:30:30.577Z",
+      "id": "log-1787550283052",
+      "timestamp": "2026-08-24T05:44:43.052Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1007,8 +1007,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787304630572",
-      "timestamp": "2026-08-21T09:30:30.572Z",
+      "id": "log-1787550282994",
+      "timestamp": "2026-08-24T05:44:42.994Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1017,8 +1017,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787303730570",
-      "timestamp": "2026-08-21T09:15:30.570Z",
+      "id": "log-1787549337058",
+      "timestamp": "2026-08-24T05:28:57.058Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1027,8 +1027,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787303730570",
-      "timestamp": "2026-08-21T09:15:30.570Z",
+      "id": "log-1787549337056",
+      "timestamp": "2026-08-24T05:28:57.057Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1037,8 +1037,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787303730567",
-      "timestamp": "2026-08-21T09:15:30.567Z",
+      "id": "log-1787549337054",
+      "timestamp": "2026-08-24T05:28:57.054Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1047,8 +1047,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787303730566",
-      "timestamp": "2026-08-21T09:15:30.566Z",
+      "id": "log-1787549337053",
+      "timestamp": "2026-08-24T05:28:57.053Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1057,8 +1057,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787303730564",
-      "timestamp": "2026-08-21T09:15:30.564Z",
+      "id": "log-1787549337051",
+      "timestamp": "2026-08-24T05:28:57.051Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1067,8 +1067,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787303730563",
-      "timestamp": "2026-08-21T09:15:30.563Z",
+      "id": "log-1787549337049",
+      "timestamp": "2026-08-24T05:28:57.049Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1077,8 +1077,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787303730559",
-      "timestamp": "2026-08-21T09:15:30.559Z",
+      "id": "log-1787549337019",
+      "timestamp": "2026-08-24T05:28:57.019Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1087,8 +1087,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787302830598",
-      "timestamp": "2026-08-21T09:00:30.598Z",
+      "id": "log-1787548073425",
+      "timestamp": "2026-08-24T05:07:53.425Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1097,8 +1097,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787302830596",
-      "timestamp": "2026-08-21T09:00:30.596Z",
+      "id": "log-1787548073424",
+      "timestamp": "2026-08-24T05:07:53.424Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1107,8 +1107,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787302830594",
-      "timestamp": "2026-08-21T09:00:30.594Z",
+      "id": "log-1787548073421",
+      "timestamp": "2026-08-24T05:07:53.421Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1117,8 +1117,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787302830593",
-      "timestamp": "2026-08-21T09:00:30.593Z",
+      "id": "log-1787548073420",
+      "timestamp": "2026-08-24T05:07:53.420Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1127,8 +1127,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787302830592",
-      "timestamp": "2026-08-21T09:00:30.592Z",
+      "id": "log-1787548073418",
+      "timestamp": "2026-08-24T05:07:53.418Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1137,8 +1137,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787302830591",
-      "timestamp": "2026-08-21T09:00:30.591Z",
+      "id": "log-1787548073416",
+      "timestamp": "2026-08-24T05:07:53.416Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1147,8 +1147,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787302830588",
-      "timestamp": "2026-08-21T09:00:30.588Z",
+      "id": "log-1787548073412",
+      "timestamp": "2026-08-24T05:07:53.412Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1157,8 +1157,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787301930588",
-      "timestamp": "2026-08-21T08:45:30.588Z",
+      "id": "log-1787547173406",
+      "timestamp": "2026-08-24T04:52:53.406Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1167,8 +1167,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787301930587",
-      "timestamp": "2026-08-21T08:45:30.587Z",
+      "id": "log-1787547173404",
+      "timestamp": "2026-08-24T04:52:53.404Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1177,8 +1177,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787301930585",
-      "timestamp": "2026-08-21T08:45:30.585Z",
+      "id": "log-1787547173401",
+      "timestamp": "2026-08-24T04:52:53.401Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1187,8 +1187,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787301930584",
-      "timestamp": "2026-08-21T08:45:30.584Z",
+      "id": "log-1787547173400",
+      "timestamp": "2026-08-24T04:52:53.400Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1197,8 +1197,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787301930583",
-      "timestamp": "2026-08-21T08:45:30.583Z",
+      "id": "log-1787547173399",
+      "timestamp": "2026-08-24T04:52:53.399Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1207,8 +1207,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787301930581",
-      "timestamp": "2026-08-21T08:45:30.581Z",
+      "id": "log-1787547173397",
+      "timestamp": "2026-08-24T04:52:53.397Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1217,8 +1217,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787301930577",
-      "timestamp": "2026-08-21T08:45:30.577Z",
+      "id": "log-1787547173393",
+      "timestamp": "2026-08-24T04:52:53.393Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1227,8 +1227,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787301030586",
-      "timestamp": "2026-08-21T08:30:30.586Z",
+      "id": "log-1787546273391",
+      "timestamp": "2026-08-24T04:37:53.391Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1237,8 +1237,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787301030585",
-      "timestamp": "2026-08-21T08:30:30.585Z",
+      "id": "log-1787546273390",
+      "timestamp": "2026-08-24T04:37:53.390Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1247,8 +1247,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787301030582",
-      "timestamp": "2026-08-21T08:30:30.582Z",
+      "id": "log-1787546273388",
+      "timestamp": "2026-08-24T04:37:53.388Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1257,8 +1257,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787301030581",
-      "timestamp": "2026-08-21T08:30:30.581Z",
+      "id": "log-1787546273387",
+      "timestamp": "2026-08-24T04:37:53.387Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1267,8 +1267,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787301030580",
-      "timestamp": "2026-08-21T08:30:30.580Z",
+      "id": "log-1787546273385",
+      "timestamp": "2026-08-24T04:37:53.385Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1277,8 +1277,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787301030579",
-      "timestamp": "2026-08-21T08:30:30.579Z",
+      "id": "log-1787546273383",
+      "timestamp": "2026-08-24T04:37:53.383Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1287,8 +1287,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787301030575",
-      "timestamp": "2026-08-21T08:30:30.575Z",
+      "id": "log-1787546273371",
+      "timestamp": "2026-08-24T04:37:53.371Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1297,8 +1297,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787300130577",
-      "timestamp": "2026-08-21T08:15:30.577Z",
+      "id": "log-1787545373456",
+      "timestamp": "2026-08-24T04:22:53.456Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1307,8 +1307,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787300130575",
-      "timestamp": "2026-08-21T08:15:30.575Z",
+      "id": "log-1787545373454",
+      "timestamp": "2026-08-24T04:22:53.454Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1317,8 +1317,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787300130573",
-      "timestamp": "2026-08-21T08:15:30.573Z",
+      "id": "log-1787545373426",
+      "timestamp": "2026-08-24T04:22:53.426Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1327,8 +1327,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787300130571",
-      "timestamp": "2026-08-21T08:15:30.571Z",
+      "id": "log-1787545373425",
+      "timestamp": "2026-08-24T04:22:53.425Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1337,8 +1337,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787300130570",
-      "timestamp": "2026-08-21T08:15:30.570Z",
+      "id": "log-1787545373424",
+      "timestamp": "2026-08-24T04:22:53.424Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1347,8 +1347,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787300130569",
-      "timestamp": "2026-08-21T08:15:30.569Z",
+      "id": "log-1787545373423",
+      "timestamp": "2026-08-24T04:22:53.423Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1357,8 +1357,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787300130564",
-      "timestamp": "2026-08-21T08:15:30.564Z",
+      "id": "log-1787545373404",
+      "timestamp": "2026-08-24T04:22:53.404Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1367,8 +1367,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787299230621",
-      "timestamp": "2026-08-21T08:00:30.621Z",
+      "id": "log-1787543689213",
+      "timestamp": "2026-08-24T03:54:49.213Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1377,8 +1377,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787299230619",
-      "timestamp": "2026-08-21T08:00:30.619Z",
+      "id": "log-1787543689209",
+      "timestamp": "2026-08-24T03:54:49.209Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1387,8 +1387,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787299230617",
-      "timestamp": "2026-08-21T08:00:30.617Z",
+      "id": "log-1787543689104",
+      "timestamp": "2026-08-24T03:54:49.104Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1397,8 +1397,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787299230616",
-      "timestamp": "2026-08-21T08:00:30.616Z",
+      "id": "log-1787543689101",
+      "timestamp": "2026-08-24T03:54:49.101Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1407,8 +1407,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787299230615",
-      "timestamp": "2026-08-21T08:00:30.615Z",
+      "id": "log-1787543689097",
+      "timestamp": "2026-08-24T03:54:49.098Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1417,8 +1417,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787299230613",
-      "timestamp": "2026-08-21T08:00:30.613Z",
+      "id": "log-1787543689092",
+      "timestamp": "2026-08-24T03:54:49.092Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1427,8 +1427,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787299230609",
-      "timestamp": "2026-08-21T08:00:30.609Z",
+      "id": "log-1787543689024",
+      "timestamp": "2026-08-24T03:54:49.024Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1437,8 +1437,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787298330617",
-      "timestamp": "2026-08-21T07:45:30.617Z",
+      "id": "log-1787542701015",
+      "timestamp": "2026-08-24T03:38:21.015Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1447,8 +1447,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787298330615",
-      "timestamp": "2026-08-21T07:45:30.615Z",
+      "id": "log-1787542701014",
+      "timestamp": "2026-08-24T03:38:21.014Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1457,8 +1457,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787298330613",
-      "timestamp": "2026-08-21T07:45:30.613Z",
+      "id": "log-1787542701012",
+      "timestamp": "2026-08-24T03:38:21.012Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1467,8 +1467,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787298330612",
-      "timestamp": "2026-08-21T07:45:30.612Z",
+      "id": "log-1787542701011",
+      "timestamp": "2026-08-24T03:38:21.011Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1477,8 +1477,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787298330611",
-      "timestamp": "2026-08-21T07:45:30.611Z",
+      "id": "log-1787542701010",
+      "timestamp": "2026-08-24T03:38:21.010Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1487,8 +1487,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787298330609",
-      "timestamp": "2026-08-21T07:45:30.609Z",
+      "id": "log-1787542701009",
+      "timestamp": "2026-08-24T03:38:21.009Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1497,8 +1497,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787298330604",
-      "timestamp": "2026-08-21T07:45:30.604Z",
+      "id": "log-1787542701006",
+      "timestamp": "2026-08-24T03:38:21.006Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1507,8 +1507,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787297430611",
-      "timestamp": "2026-08-21T07:30:30.611Z",
+      "id": "log-1787541801008",
+      "timestamp": "2026-08-24T03:23:21.008Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1517,8 +1517,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787297430610",
-      "timestamp": "2026-08-21T07:30:30.610Z",
+      "id": "log-1787541801007",
+      "timestamp": "2026-08-24T03:23:21.007Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1527,8 +1527,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787297430607",
-      "timestamp": "2026-08-21T07:30:30.607Z",
+      "id": "log-1787541801006",
+      "timestamp": "2026-08-24T03:23:21.006Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1537,8 +1537,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787297430606",
-      "timestamp": "2026-08-21T07:30:30.606Z",
+      "id": "log-1787541801005",
+      "timestamp": "2026-08-24T03:23:21.005Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1547,8 +1547,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787297430605",
-      "timestamp": "2026-08-21T07:30:30.605Z",
+      "id": "log-1787541801004",
+      "timestamp": "2026-08-24T03:23:21.004Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1557,8 +1557,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787297430603",
-      "timestamp": "2026-08-21T07:30:30.603Z",
+      "id": "log-1787541801002",
+      "timestamp": "2026-08-24T03:23:21.002Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1567,8 +1567,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787297430598",
-      "timestamp": "2026-08-21T07:30:30.598Z",
+      "id": "log-1787541800998",
+      "timestamp": "2026-08-24T03:23:20.998Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1577,8 +1577,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787296530619",
-      "timestamp": "2026-08-21T07:15:30.619Z",
+      "id": "log-1787540901006",
+      "timestamp": "2026-08-24T03:08:21.006Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1587,8 +1587,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787296530617",
-      "timestamp": "2026-08-21T07:15:30.617Z",
+      "id": "log-1787540901004",
+      "timestamp": "2026-08-24T03:08:21.004Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1597,8 +1597,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787296530615",
-      "timestamp": "2026-08-21T07:15:30.615Z",
+      "id": "log-1787540901001",
+      "timestamp": "2026-08-24T03:08:21.001Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1607,8 +1607,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787296530614",
-      "timestamp": "2026-08-21T07:15:30.614Z",
+      "id": "log-1787540901000",
+      "timestamp": "2026-08-24T03:08:21.000Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1617,8 +1617,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787296530613",
-      "timestamp": "2026-08-21T07:15:30.613Z",
+      "id": "log-1787540900998",
+      "timestamp": "2026-08-24T03:08:20.998Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1627,8 +1627,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787296530611",
-      "timestamp": "2026-08-21T07:15:30.611Z",
+      "id": "log-1787540900996",
+      "timestamp": "2026-08-24T03:08:20.996Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1637,8 +1637,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787296530608",
-      "timestamp": "2026-08-21T07:15:30.608Z",
+      "id": "log-1787540900993",
+      "timestamp": "2026-08-24T03:08:20.993Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1647,8 +1647,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787295630618",
-      "timestamp": "2026-08-21T07:00:30.618Z",
+      "id": "log-1787540001059",
+      "timestamp": "2026-08-24T02:53:21.059Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1657,8 +1657,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787295630617",
-      "timestamp": "2026-08-21T07:00:30.617Z",
+      "id": "log-1787540001058",
+      "timestamp": "2026-08-24T02:53:21.058Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1667,8 +1667,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787295630614",
-      "timestamp": "2026-08-21T07:00:30.614Z",
+      "id": "log-1787540001057",
+      "timestamp": "2026-08-24T02:53:21.057Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1677,8 +1677,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787295630612",
-      "timestamp": "2026-08-21T07:00:30.612Z",
+      "id": "log-1787540001057",
+      "timestamp": "2026-08-24T02:53:21.057Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1687,8 +1687,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787295630611",
-      "timestamp": "2026-08-21T07:00:30.611Z",
+      "id": "log-1787540001056",
+      "timestamp": "2026-08-24T02:53:21.056Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1697,8 +1697,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787295630609",
-      "timestamp": "2026-08-21T07:00:30.609Z",
+      "id": "log-1787540001055",
+      "timestamp": "2026-08-24T02:53:21.055Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1707,8 +1707,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787295630605",
-      "timestamp": "2026-08-21T07:00:30.605Z",
+      "id": "log-1787540000990",
+      "timestamp": "2026-08-24T02:53:20.990Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1717,8 +1717,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787294730616",
-      "timestamp": "2026-08-21T06:45:30.616Z",
+      "id": "log-1787538995057",
+      "timestamp": "2026-08-24T02:36:35.057Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1727,8 +1727,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787294730615",
-      "timestamp": "2026-08-21T06:45:30.615Z",
+      "id": "log-1787538995057",
+      "timestamp": "2026-08-24T02:36:35.057Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1737,8 +1737,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787294730613",
-      "timestamp": "2026-08-21T06:45:30.613Z",
+      "id": "log-1787538995056",
+      "timestamp": "2026-08-24T02:36:35.056Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1747,8 +1747,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787294730612",
-      "timestamp": "2026-08-21T06:45:30.612Z",
+      "id": "log-1787538995055",
+      "timestamp": "2026-08-24T02:36:35.055Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1757,8 +1757,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787294730610",
-      "timestamp": "2026-08-21T06:45:30.610Z",
+      "id": "log-1787538995053",
+      "timestamp": "2026-08-24T02:36:35.053Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1767,8 +1767,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787294730608",
-      "timestamp": "2026-08-21T06:45:30.608Z",
+      "id": "log-1787538995052",
+      "timestamp": "2026-08-24T02:36:35.052Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1777,8 +1777,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787294730605",
-      "timestamp": "2026-08-21T06:45:30.605Z",
+      "id": "log-1787538994986",
+      "timestamp": "2026-08-24T02:36:34.986Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1787,8 +1787,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787293830617",
-      "timestamp": "2026-08-21T06:30:30.617Z",
+      "id": "log-1787538030057",
+      "timestamp": "2026-08-24T02:20:30.057Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1797,8 +1797,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787293830616",
-      "timestamp": "2026-08-21T06:30:30.616Z",
+      "id": "log-1787538030056",
+      "timestamp": "2026-08-24T02:20:30.056Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1807,8 +1807,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787293830614",
-      "timestamp": "2026-08-21T06:30:30.614Z",
+      "id": "log-1787538030055",
+      "timestamp": "2026-08-24T02:20:30.055Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1817,8 +1817,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787293830613",
-      "timestamp": "2026-08-21T06:30:30.613Z",
+      "id": "log-1787538030055",
+      "timestamp": "2026-08-24T02:20:30.055Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1827,8 +1827,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787293830611",
-      "timestamp": "2026-08-21T06:30:30.611Z",
+      "id": "log-1787538030054",
+      "timestamp": "2026-08-24T02:20:30.054Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1837,8 +1837,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787293830610",
-      "timestamp": "2026-08-21T06:30:30.610Z",
+      "id": "log-1787538030054",
+      "timestamp": "2026-08-24T02:20:30.054Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1847,8 +1847,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787293830606",
-      "timestamp": "2026-08-21T06:30:30.606Z",
+      "id": "log-1787538029992",
+      "timestamp": "2026-08-24T02:20:29.992Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1857,8 +1857,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787292930614",
-      "timestamp": "2026-08-21T06:15:30.614Z",
+      "id": "log-1787536229056",
+      "timestamp": "2026-08-24T01:50:29.056Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1867,8 +1867,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787292930612",
-      "timestamp": "2026-08-21T06:15:30.612Z",
+      "id": "log-1787536229055",
+      "timestamp": "2026-08-24T01:50:29.055Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1877,8 +1877,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787292930610",
-      "timestamp": "2026-08-21T06:15:30.610Z",
+      "id": "log-1787536229055",
+      "timestamp": "2026-08-24T01:50:29.055Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1887,8 +1887,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787292930609",
-      "timestamp": "2026-08-21T06:15:30.609Z",
+      "id": "log-1787536229054",
+      "timestamp": "2026-08-24T01:50:29.054Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1897,8 +1897,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787292930608",
-      "timestamp": "2026-08-21T06:15:30.608Z",
+      "id": "log-1787536229054",
+      "timestamp": "2026-08-24T01:50:29.054Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1907,8 +1907,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787292930606",
-      "timestamp": "2026-08-21T06:15:30.606Z",
+      "id": "log-1787536229053",
+      "timestamp": "2026-08-24T01:50:29.053Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1917,8 +1917,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787292930602",
-      "timestamp": "2026-08-21T06:15:30.602Z",
+      "id": "log-1787536228987",
+      "timestamp": "2026-08-24T01:50:28.987Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1927,8 +1927,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787292030604",
-      "timestamp": "2026-08-21T06:00:30.604Z",
+      "id": "log-1787535232064",
+      "timestamp": "2026-08-24T01:33:52.064Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -1937,8 +1937,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787292030602",
-      "timestamp": "2026-08-21T06:00:30.602Z",
+      "id": "log-1787535232063",
+      "timestamp": "2026-08-24T01:33:52.063Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -1947,8 +1947,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787292030600",
-      "timestamp": "2026-08-21T06:00:30.600Z",
+      "id": "log-1787535232062",
+      "timestamp": "2026-08-24T01:33:52.062Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -1957,8 +1957,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787292030599",
-      "timestamp": "2026-08-21T06:00:30.599Z",
+      "id": "log-1787535232062",
+      "timestamp": "2026-08-24T01:33:52.062Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -1967,8 +1967,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787292030598",
-      "timestamp": "2026-08-21T06:00:30.598Z",
+      "id": "log-1787535232061",
+      "timestamp": "2026-08-24T01:33:52.061Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -1977,8 +1977,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787292030597",
-      "timestamp": "2026-08-21T06:00:30.597Z",
+      "id": "log-1787535232059",
+      "timestamp": "2026-08-24T01:33:52.059Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -1987,8 +1987,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787292030593",
-      "timestamp": "2026-08-21T06:00:30.593Z",
+      "id": "log-1787535231989",
+      "timestamp": "2026-08-24T01:33:51.989Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -1997,8 +1997,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787291130598",
-      "timestamp": "2026-08-21T05:45:30.598Z",
+      "id": "log-1787534165185",
+      "timestamp": "2026-08-24T01:16:05.185Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -2007,8 +2007,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787291130596",
-      "timestamp": "2026-08-21T05:45:30.596Z",
+      "id": "log-1787534165185",
+      "timestamp": "2026-08-24T01:16:05.185Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -2017,8 +2017,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787291130594",
-      "timestamp": "2026-08-21T05:45:30.594Z",
+      "id": "log-1787534165184",
+      "timestamp": "2026-08-24T01:16:05.184Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -2027,8 +2027,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787291130593",
-      "timestamp": "2026-08-21T05:45:30.593Z",
+      "id": "log-1787534165183",
+      "timestamp": "2026-08-24T01:16:05.183Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -2037,8 +2037,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787291130591",
-      "timestamp": "2026-08-21T05:45:30.591Z",
+      "id": "log-1787534165183",
+      "timestamp": "2026-08-24T01:16:05.183Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -2047,8 +2047,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787291130590",
-      "timestamp": "2026-08-21T05:45:30.590Z",
+      "id": "log-1787534165182",
+      "timestamp": "2026-08-24T01:16:05.182Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -2057,8 +2057,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787291130586",
-      "timestamp": "2026-08-21T05:45:30.586Z",
+      "id": "log-1787534165120",
+      "timestamp": "2026-08-24T01:16:05.120Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -2067,8 +2067,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787290230643",
-      "timestamp": "2026-08-21T05:30:30.643Z",
+      "id": "log-1787532753140",
+      "timestamp": "2026-08-24T00:52:33.140Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -2077,8 +2077,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787290230642",
-      "timestamp": "2026-08-21T05:30:30.642Z",
+      "id": "log-1787532753139",
+      "timestamp": "2026-08-24T00:52:33.139Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -2087,8 +2087,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787290230640",
-      "timestamp": "2026-08-21T05:30:30.640Z",
+      "id": "log-1787532753138",
+      "timestamp": "2026-08-24T00:52:33.138Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -2097,8 +2097,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787290230639",
-      "timestamp": "2026-08-21T05:30:30.639Z",
+      "id": "log-1787532753138",
+      "timestamp": "2026-08-24T00:52:33.138Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -2107,8 +2107,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787290230638",
-      "timestamp": "2026-08-21T05:30:30.638Z",
+      "id": "log-1787532753137",
+      "timestamp": "2026-08-24T00:52:33.137Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -2117,8 +2117,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787290230636",
-      "timestamp": "2026-08-21T05:30:30.636Z",
+      "id": "log-1787532753137",
+      "timestamp": "2026-08-24T00:52:33.137Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -2127,8 +2127,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787290230630",
-      "timestamp": "2026-08-21T05:30:30.630Z",
+      "id": "log-1787532753075",
+      "timestamp": "2026-08-24T00:52:33.075Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -2137,8 +2137,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787289330643",
-      "timestamp": "2026-08-21T05:15:30.643Z",
+      "id": "log-1787531747140",
+      "timestamp": "2026-08-24T00:35:47.140Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -2147,8 +2147,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787289330642",
-      "timestamp": "2026-08-21T05:15:30.642Z",
+      "id": "log-1787531747139",
+      "timestamp": "2026-08-24T00:35:47.139Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -2157,8 +2157,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787289330640",
-      "timestamp": "2026-08-21T05:15:30.640Z",
+      "id": "log-1787531747138",
+      "timestamp": "2026-08-24T00:35:47.138Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -2167,8 +2167,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787289330639",
-      "timestamp": "2026-08-21T05:15:30.639Z",
+      "id": "log-1787531747138",
+      "timestamp": "2026-08-24T00:35:47.138Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -2177,8 +2177,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787289330638",
-      "timestamp": "2026-08-21T05:15:30.638Z",
+      "id": "log-1787531747137",
+      "timestamp": "2026-08-24T00:35:47.137Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -2187,8 +2187,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787289330636",
-      "timestamp": "2026-08-21T05:15:30.636Z",
+      "id": "log-1787531747136",
+      "timestamp": "2026-08-24T00:35:47.136Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -2197,8 +2197,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787289330632",
-      "timestamp": "2026-08-21T05:15:30.632Z",
+      "id": "log-1787531747069",
+      "timestamp": "2026-08-24T00:35:47.069Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -2207,8 +2207,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787288430643",
-      "timestamp": "2026-08-21T05:00:30.643Z",
+      "id": "log-1787530668141",
+      "timestamp": "2026-08-24T00:17:48.141Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -2217,8 +2217,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787288430642",
-      "timestamp": "2026-08-21T05:00:30.642Z",
+      "id": "log-1787530668140",
+      "timestamp": "2026-08-24T00:17:48.140Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -2227,8 +2227,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787288430639",
-      "timestamp": "2026-08-21T05:00:30.639Z",
+      "id": "log-1787530668139",
+      "timestamp": "2026-08-24T00:17:48.139Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -2237,8 +2237,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787288430638",
-      "timestamp": "2026-08-21T05:00:30.638Z",
+      "id": "log-1787530668139",
+      "timestamp": "2026-08-24T00:17:48.139Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -2247,8 +2247,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787288430637",
-      "timestamp": "2026-08-21T05:00:30.637Z",
+      "id": "log-1787530668138",
+      "timestamp": "2026-08-24T00:17:48.138Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -2257,8 +2257,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787288430635",
-      "timestamp": "2026-08-21T05:00:30.635Z",
+      "id": "log-1787530668138",
+      "timestamp": "2026-08-24T00:17:48.138Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -2267,8 +2267,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787288430632",
-      "timestamp": "2026-08-21T05:00:30.632Z",
+      "id": "log-1787530668079",
+      "timestamp": "2026-08-24T00:17:48.079Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -2277,8 +2277,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787287530643",
-      "timestamp": "2026-08-21T04:45:30.643Z",
+      "id": "log-1787528989148",
+      "timestamp": "2026-08-23T23:49:49.148Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -2287,8 +2287,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787287530642",
-      "timestamp": "2026-08-21T04:45:30.642Z",
+      "id": "log-1787528989148",
+      "timestamp": "2026-08-23T23:49:49.148Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -2297,8 +2297,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787287530641",
-      "timestamp": "2026-08-21T04:45:30.641Z",
+      "id": "log-1787528989147",
+      "timestamp": "2026-08-23T23:49:49.147Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -2307,8 +2307,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787287530640",
-      "timestamp": "2026-08-21T04:45:30.640Z",
+      "id": "log-1787528989146",
+      "timestamp": "2026-08-23T23:49:49.146Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -2317,8 +2317,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787287530639",
-      "timestamp": "2026-08-21T04:45:30.639Z",
+      "id": "log-1787528989146",
+      "timestamp": "2026-08-23T23:49:49.146Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -2327,8 +2327,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787287530638",
-      "timestamp": "2026-08-21T04:45:30.638Z",
+      "id": "log-1787528989145",
+      "timestamp": "2026-08-23T23:49:49.145Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -2337,8 +2337,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787287530634",
-      "timestamp": "2026-08-21T04:45:30.634Z",
+      "id": "log-1787528989084",
+      "timestamp": "2026-08-23T23:49:49.084Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -2347,8 +2347,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787286630639",
-      "timestamp": "2026-08-21T04:30:30.639Z",
+      "id": "log-1787528064164",
+      "timestamp": "2026-08-23T23:34:24.164Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -2357,8 +2357,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787286630638",
-      "timestamp": "2026-08-21T04:30:30.638Z",
+      "id": "log-1787528064163",
+      "timestamp": "2026-08-23T23:34:24.163Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -2367,8 +2367,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787286630636",
-      "timestamp": "2026-08-21T04:30:30.636Z",
+      "id": "log-1787528064161",
+      "timestamp": "2026-08-23T23:34:24.161Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -2377,8 +2377,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787286630635",
-      "timestamp": "2026-08-21T04:30:30.635Z",
+      "id": "log-1787528064160",
+      "timestamp": "2026-08-23T23:34:24.160Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -2387,8 +2387,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787286630634",
-      "timestamp": "2026-08-21T04:30:30.634Z",
+      "id": "log-1787528064159",
+      "timestamp": "2026-08-23T23:34:24.159Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -2397,8 +2397,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787286630633",
-      "timestamp": "2026-08-21T04:30:30.633Z",
+      "id": "log-1787528064158",
+      "timestamp": "2026-08-23T23:34:24.158Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -2407,8 +2407,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787286630630",
-      "timestamp": "2026-08-21T04:30:30.630Z",
+      "id": "log-1787528064096",
+      "timestamp": "2026-08-23T23:34:24.096Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -2417,8 +2417,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787285730637",
-      "timestamp": "2026-08-21T04:15:30.637Z",
+      "id": "log-1787527024171",
+      "timestamp": "2026-08-23T23:17:04.171Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -2427,8 +2427,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787285730637",
-      "timestamp": "2026-08-21T04:15:30.637Z",
+      "id": "log-1787527024170",
+      "timestamp": "2026-08-23T23:17:04.170Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -2437,8 +2437,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787285730634",
-      "timestamp": "2026-08-21T04:15:30.634Z",
+      "id": "log-1787527024169",
+      "timestamp": "2026-08-23T23:17:04.169Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -2447,8 +2447,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787285730634",
-      "timestamp": "2026-08-21T04:15:30.634Z",
+      "id": "log-1787527024169",
+      "timestamp": "2026-08-23T23:17:04.169Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
@@ -2457,8 +2457,8 @@
       "articleId": "art-reliance-green-hydrogen-expansion"
     },
     {
-      "id": "log-1787285730633",
-      "timestamp": "2026-08-21T04:15:30.633Z",
+      "id": "log-1787527024168",
+      "timestamp": "2026-08-23T23:17:04.168Z",
       "provider": "Global Tech Wire",
       "title": "Tech & Semiconductor Rally Drives AI Infrastructure Growth Expectations",
       "sourceUrl": "https://capital-sphere.media/wire/tech-semiconductor-ai-growth",
@@ -2467,8 +2467,8 @@
       "articleId": "art-1787124195661-rjc25"
     },
     {
-      "id": "log-1787285730633",
-      "timestamp": "2026-08-21T04:15:30.633Z",
+      "id": "log-1787527024167",
+      "timestamp": "2026-08-23T23:17:04.167Z",
       "provider": "RBI Press Bureau",
       "title": "RBI Keeps Repo Rate Unchanged at 6.50% Citing Inflation Target Alignment",
       "sourceUrl": "https://capital-sphere.media/wire/rbi-monetary-policy-rate-decision",
@@ -2477,8 +2477,8 @@
       "articleId": "art-rbi-repo-rate-decision"
     },
     {
-      "id": "log-1787285730629",
-      "timestamp": "2026-08-21T04:15:30.629Z",
+      "id": "log-1787527024111",
+      "timestamp": "2026-08-23T23:17:04.111Z",
       "provider": "Dalal Street Wire",
       "title": "Nifty 50 Hits Record High on Foreign Institutional Inflows & Bank Rally",
       "sourceUrl": "https://capital-sphere.media/wire/nifty-50-record-high-inflows",
@@ -2487,8 +2487,8 @@
       "articleId": "art-nifty-record-high-2026"
     },
     {
-      "id": "log-1787284830636",
-      "timestamp": "2026-08-21T04:00:30.636Z",
+      "id": "log-1787525346173",
+      "timestamp": "2026-08-23T22:49:06.173Z",
       "provider": "Tata Consultancy Services IR Press Release",
       "title": "TCS Announces Strategic Multi-Year Enterprise AI Partnership with Global Retail Giant",
       "sourceUrl": "https://www.tcs.com/news-room",
@@ -2497,8 +2497,8 @@
       "articleId": "art-1787124195663-rdh71"
     },
     {
-      "id": "log-1787284830635",
-      "timestamp": "2026-08-21T04:00:30.635Z",
+      "id": "log-1787525346173",
+      "timestamp": "2026-08-23T22:49:06.173Z",
       "provider": "Securities and Exchange Board of India (SEBI)",
       "title": "SEBI Streamlines FPI Disclosure Norms & Enhances Derivative Risk Controls",
       "sourceUrl": "https://www.sebi.gov.in/legal/circulars",
@@ -2507,8 +2507,8 @@
       "articleId": "art-1787124195663-9cmr7"
     },
     {
-      "id": "log-1787284830633",
-      "timestamp": "2026-08-21T04:00:30.633Z",
+      "id": "log-1787525346172",
+      "timestamp": "2026-08-23T22:49:06.172Z",
       "provider": "Macroeconomic Desk",
       "title": "India GDP Growth Target Revised to 7.2% Following Strong Industrial Production",
       "sourceUrl": "https://capital-sphere.media/wire/india-gdp-growth-revised-7-2-percent",
@@ -2517,8 +2517,8 @@
       "articleId": "art-1787124195662-6nvdu"
     },
     {
-      "id": "log-1787284830632",
-      "timestamp": "2026-08-21T04:00:30.632Z",
+      "id": "log-1787525346172",
+      "timestamp": "2026-08-23T22:49:06.172Z",
       "provider": "Corporate Wire",
       "title": "Reliance Industries Outlines $10B Expansion in Renewable Energy & Green Hydrogen",
       "sourceUrl": "https://capital-sphere.media/wire/reliance-green-hydrogen-expansion",
