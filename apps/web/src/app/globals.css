@@ -99,11 +99,18 @@ body {
 .animate-marquee-loop {
   display: flex;
   width: max-content;
-  animation: marqueeLoop 40s linear infinite;
+  animation: marqueeLoop 60s linear infinite;
   will-change: transform;
 }
 
-.animate-marquee-loop:hover {
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marqueeLoop 85s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-loop:hover, .animate-marquee-slow:hover {
   animation-play-state: paused;
 }
 

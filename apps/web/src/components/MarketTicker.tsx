@@ -197,7 +197,7 @@ export function MarketTicker() {
 
         {/* Infinity Loop Marquee Track for Crypto */}
         <div className="overflow-hidden relative flex-1 pl-4">
-          <div className="animate-marquee-loop flex items-center gap-6 whitespace-nowrap">
+          <div className="animate-marquee-slow flex items-center gap-6 whitespace-nowrap">
             {loopCryptos.map((coin, itemIndex) => {
               if (!coin || !coin.symbol) return null;
               const isPositive = coin.change24h >= 0;
