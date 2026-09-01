@@ -52,6 +52,7 @@ model User {
   portfolios    Portfolio[]
   savedArticles SavedArticle[]
   auditLogs     AuditLog[]
+  cryptoWatchlists CryptoWatchlist[]
 }
 
 model VerificationToken {
@@ -253,4 +254,67 @@ model AuditLog {
   details   String?
   ipAddress String?
   createdAt DateTime @default(now())
+}
+
+model CryptoCurrency {
+  id                String            @id @default(uuid())
+  symbol            String            @unique
+  name              String
+  slug              String            @unique
+  logoUrl           String?
+  rank              Int?
+  circulatingSupply Float?
+  totalSupply       Float?
+  maxSupply         Float?
+  ath               Float?
+  atl               Float?
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  marketData        CryptoMarketData[]
+  watchlistItems    CryptoWatchlist[]
+
+  @@map("cryptocurrencies")
+}
+
+model CryptoMarketData {
+  id         String         @id @default(uuid())
+  cryptoId   String
+  crypto     CryptoCurrency @relation(fields: [cryptoId], references: [id], onDelete: Cascade)
+  price      Float
+  marketCap  Float
+  volume24h  Float
+  change24h  Float
+  high24h    Float?
+  low24h     Float?
+  timestamp  DateTime       @default(now())
+
+  @@map("crypto_market_data")
+}
+
+model CryptoNews {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  summary     String
+  content     String?  @db.Text
+  source      String
+  sourceUrl   String?
+  category    String   @default("Markets")
+  publishedAt DateTime @default(now())
+  imageUrl    String?
+
+  @@map("crypto_news")
+}
+
+model CryptoWatchlist {
+  id          String         @id @default(uuid())
+  userId      String
+  user        User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cryptoId    String
+  crypto      CryptoCurrency @relation(fields: [cryptoId], references: [id], onDelete: Cascade)
+  targetPrice Float?
+  createdAt   DateTime       @default(now())
+
+  @@unique([userId, cryptoId])
+  @@map("crypto_watchlist")
 }

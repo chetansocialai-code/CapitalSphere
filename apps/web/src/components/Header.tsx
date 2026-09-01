@@ -65,12 +65,40 @@ export function Header() {
     { name: 'OPTIONS', href: '/options' },
     { name: 'IPO', href: '/ipo' },
     { name: 'COMPANIES', href: '/companies/reliance-industries' },
+    { name: 'CRYPTO', href: '/crypto' },
     { name: 'RESEARCH', href: '/research' },
     { name: 'TOOLS', href: '/tools' },
     { name: 'CALENDAR', href: '/economy/calendar' },
     { name: 'WATCHLIST', href: '/watchlist' },
     { name: 'DEVELOPERS API', href: '/developers' },
   ];
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  const searchDatabase = [
+    { type: 'CRYPTO', name: 'Bitcoin', symbol: 'BTC', href: '/crypto/bitcoin', detail: 'Live Crypto • Market Cap $1.26T' },
+    { type: 'CRYPTO', name: 'Ethereum', symbol: 'ETH', href: '/crypto/ethereum', detail: 'Live Crypto • Market Cap $418B' },
+    { type: 'CRYPTO', name: 'Solana', symbol: 'SOL', href: '/crypto/solana', detail: 'Live Crypto • Market Cap $72B' },
+    { type: 'CRYPTO', name: 'BNB', symbol: 'BNB', href: '/crypto/binancecoin', detail: 'Live Crypto • Market Cap $84.5B' },
+    { type: 'CRYPTO', name: 'XRP', symbol: 'XRP', href: '/crypto/ripple', detail: 'Live Crypto • Market Cap $32.8B' },
+    { type: 'CRYPTO', name: 'Dogecoin', symbol: 'DOGE', href: '/crypto/dogecoin', detail: 'Live Crypto • Market Cap $18.1B' },
+    { type: 'CRYPTO', name: 'Cardano', symbol: 'ADA', href: '/crypto/cardano', detail: 'Live Crypto • Market Cap $13.1B' },
+    { type: 'STOCK', name: 'Reliance Industries', symbol: 'RELIANCE', href: '/stocks', detail: 'NSE/BSE • Energy & Retail' },
+    { type: 'STOCK', name: 'Tata Consultancy Services', symbol: 'TCS', href: '/stocks', detail: 'NSE/BSE • IT Services' },
+    { type: 'STOCK', name: 'HDFC Bank', symbol: 'HDFCBANK', href: '/stocks', detail: 'NSE/BSE • Banking' },
+    { type: 'NEWS', name: 'Bitcoin News & Regulatory Updates', symbol: 'NEWS', href: '/crypto', detail: 'Crypto Intelligence' },
+    { type: 'NEWS', name: 'Ethereum Pectra Upgrade Guide', symbol: 'NEWS', href: '/crypto/ethereum', detail: 'Blockchain Analysis' }
+  ];
+
+  const searchResults = searchQuery.trim() === ''
+    ? []
+    : searchDatabase.filter(
+        item =>
+          item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.symbol.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.type.toLowerCase().includes(searchQuery.toLowerCase())
+      );
 
   return (
     <header className="sticky top-0 z-50 cs-card border-b backdrop-blur-md">
@@ -124,8 +152,8 @@ export function Header() {
         </div>
       </div>
 
-      {/* Main Branding & Navigation Bar */}
-      <div className="max-w-master mx-auto px-4 py-2 flex items-center justify-between gap-4">
+      {/* Main Header Bar */}
+      <div className="max-w-master mx-auto px-4 py-3 flex justify-between items-center gap-4">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2 group shrink-0">
           <img
@@ -135,14 +163,57 @@ export function Header() {
           />
         </Link>
 
-        {/* Global Search Box */}
+        {/* Global Search Box with Live Predictive Results */}
         <div className="hidden lg:flex items-center relative max-w-md w-full">
           <Search className="absolute left-3 w-4 h-4 cs-text-sub" />
           <input
             type="text"
-            placeholder="Search Stocks, Option Chains, News (e.g. RELIANCE, NIFTY)..."
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setSearchOpen(true);
+            }}
+            onFocus={() => setSearchOpen(true)}
+            placeholder="Search Stocks, Cryptos, Articles, IPOs (e.g. Bitcoin, BTC, RELIANCE)..."
             className="w-full cs-card text-xs placeholder:text-slate-500 pl-9 pr-4 py-2 rounded-lg border focus:border-[#4DA3FF] focus:outline-none transition shadow-xs"
           />
+
+          {searchOpen && searchResults.length > 0 && (
+            <div className="absolute top-full left-0 right-0 mt-2 cs-card border rounded-xl shadow-2xl p-2 z-50 max-h-80 overflow-y-auto space-y-1 font-mono text-xs">
+              <div className="px-2 py-1 text-3xs font-bold cs-text-sub uppercase border-b cs-border flex justify-between">
+                <span>Search Results ({searchResults.length})</span>
+                <button onClick={() => setSearchOpen(false)} className="hover:text-white">CLOSE</button>
+              </div>
+              {searchResults.map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={item.href}
+                  onClick={() => {
+                    setSearchOpen(false);
+                    setSearchQuery('');
+                  }}
+                  className="flex items-center justify-between p-2 hover:bg-[#4DA3FF]/10 rounded-lg transition"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className={`text-3xs font-bold px-1.5 py-0.5 rounded border uppercase ${
+                      item.type === 'CRYPTO'
+                        ? 'bg-amber-500/10 text-amber-400 border-amber-500/30'
+                        : item.type === 'STOCK'
+                        ? 'bg-blue-500/10 text-blue-400 border-blue-500/30'
+                        : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+                    }`}>
+                      {item.type}
+                    </span>
+                    <div>
+                      <div className="font-bold text-white text-xs">{item.name} <span className="cs-text-sub text-3xs">({item.symbol})</span></div>
+                      <div className="text-3xs cs-text-sub">{item.detail}</div>
+                    </div>
+                  </div>
+                  <BarChart3 className="w-3.5 h-3.5 text-[#4DA3FF]" />
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Action Controls */}

@@ -415,6 +415,7 @@ export async function requestPasswordReset(email: string) {
 
   const genericResponse = {
     message: "If an account exists for this email, we've sent instructions to reset your password.",
+    resetUrl: ''
   };
 
   if (!user) return genericResponse;
@@ -561,7 +562,7 @@ export function createApiKeyForUser(userId: string, name: string) {
   userApiKeysDb[userId] = currentKeys;
   apiKeysLookupDb[keyHash] = record;
 
-  return { apiKey: record, rawKeySecret: rawKey };
+  return { apiKey: record, keyDetails: record, rawKeySecret: rawKey };
 }
 
 export function listUserApiKeys(userId: string): CapitalSphereApiKey[] {
@@ -595,3 +596,10 @@ export function verifyJwtToken(token: string) {
     return null;
   }
 }
+
+// Function Aliases for Server Compatibility
+export const addToUserWatchlist = addUserWatchlistSymbol;
+export const removeFromUserWatchlist = removeUserWatchlistSymbol;
+export const getUserApiKeys = listUserApiKeys;
+export const deleteApiKeyForUser = revokeApiKey;
+export const validateApiKey = verifyApiKey;

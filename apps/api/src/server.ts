@@ -5,7 +5,6 @@ import express from 'express';
 import cors from 'cors';
 import http from 'http';
 import { WebSocketServer, WebSocket } from 'ws';
-import path from 'path';
 import fs from 'fs';
 import {
   INITIAL_MARKET_TICKERS,
@@ -13,6 +12,7 @@ import {
   generateCandleData
 } from '@capitalsphere/market-data';
 import { fetchLiveNewsData } from './newsData';
+import { getLiveCryptoMarkets, getCryptoCoinBySymbol, generateCryptoPriceHistory, getCryptoNews } from './cryptoService';
 import { checkSupabaseConnection } from './supabase';
 import { getFinnhubQuote, checkFinnhubConnection } from './finnhub';
 import { UpstoxService } from '@capitalsphere/upstox';
@@ -697,6 +697,128 @@ app.get('/api/v1/upstox/callback', (req, res) => {
     instructions: 'Exchange code for access token via Upstox token endpoint'
   });
 });
+
+// ----------------------------------------------------
+// CRYPTO INTELLIGENCE API ROUTES
+// ----------------------------------------------------
+
+// Get Crypto Markets Overview & Rankings
+const handleCryptoMarkets = async (req: express.Request, res: express.Response) => {
+  try {
+    const result = await getLiveCryptoMarkets();
+    res.json({
+      success: true,
+      status: result.status,
+      isLive: result.isLive,
+      count: result.coins.length,
+      data: result.coins
+    });
+  } catch (err: any) {
+    res.status(500).json({
+      success: false,
+      error: 'Crypto market data temporarily unavailable.',
+      message: err.message
+    });
+  }
+};
+
+app.get('/api/crypto', handleCryptoMarkets);
+app.get('/api/crypto/markets', handleCryptoMarkets);
+app.get('/api/v1/crypto', handleCryptoMarkets);
+app.get('/api/v1/crypto/markets', handleCryptoMarkets);
+
+// Get Trending Crypto Coins
+const handleCryptoTrending = async (req: express.Request, res: express.Response) => {
+  try {
+    const { coins } = await getLiveCryptoMarkets();
+    // Top 5 highest volume / rank as trending
+    const trending = [...coins].sort((a, b) => b.volume24h - a.volume24h).slice(0, 6);
+    res.json({ success: true, data: trending });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: 'Crypto market data temporarily unavailable.' });
+  }
+};
+
+app.get('/api/crypto/trending', handleCryptoTrending);
+app.get('/api/v1/crypto/trending', handleCryptoTrending);
+
+// Get Top Crypto Gainers (24H)
+const handleCryptoGainers = async (req: express.Request, res: express.Response) => {
+  try {
+    const { coins } = await getLiveCryptoMarkets();
+    const gainers = [...coins].sort((a, b) => b.change24h - a.change24h).slice(0, 6);
+    res.json({ success: true, data: gainers });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: 'Crypto market data temporarily unavailable.' });
+  }
+};
+
+app.get('/api/crypto/gainers', handleCryptoGainers);
+app.get('/api/v1/crypto/gainers', handleCryptoGainers);
+
+// Get Top Crypto Losers (24H)
+const handleCryptoLosers = async (req: express.Request, res: express.Response) => {
+  try {
+    const { coins } = await getLiveCryptoMarkets();
+    const losers = [...coins].sort((a, b) => a.change24h - b.change24h).slice(0, 6);
+    res.json({ success: true, data: losers });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: 'Crypto market data temporarily unavailable.' });
+  }
+};
+
+app.get('/api/crypto/losers', handleCryptoLosers);
+app.get('/api/v1/crypto/losers', handleCryptoLosers);
+
+// Get Crypto News by Category
+const handleCryptoNews = async (req: express.Request, res: express.Response) => {
+  try {
+    const category = (req.query.category as string) || '';
+    const news = await getCryptoNews(category);
+    res.json({ success: true, category: category || 'All', count: news.length, data: news });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: 'Crypto news temporarily unavailable.' });
+  }
+};
+
+app.get('/api/crypto/news', handleCryptoNews);
+app.get('/api/v1/crypto/news', handleCryptoNews);
+
+// Get Crypto Coin Details by Symbol or Slug
+const handleCryptoCoinDetails = async (req: express.Request, res: express.Response) => {
+  try {
+    const symbol = req.params.symbol;
+    const coin = await getCryptoCoinBySymbol(symbol);
+    if (!coin) {
+      return res.status(404).json({ success: false, error: `Cryptocurrency '${symbol}' not found.` });
+    }
+    res.json({ success: true, data: coin });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: 'Crypto market data temporarily unavailable.' });
+  }
+};
+
+app.get('/api/crypto/:symbol', handleCryptoCoinDetails);
+app.get('/api/v1/crypto/:symbol', handleCryptoCoinDetails);
+
+// Get Crypto Coin Price History for Charts (1H, 24H, 7D, 30D, 90D, 1Y, ALL)
+const handleCryptoHistory = async (req: express.Request, res: express.Response) => {
+  try {
+    const symbol = req.params.symbol;
+    const timeframe = (req.query.timeframe as string) || (req.query.tf as string) || '24H';
+    const coin = await getCryptoCoinBySymbol(symbol);
+    if (!coin) {
+      return res.status(404).json({ success: false, error: `Cryptocurrency '${symbol}' not found.` });
+    }
+    const historyData = generateCryptoPriceHistory(coin, timeframe);
+    res.json({ success: true, data: historyData });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: 'Crypto chart history temporarily unavailable.' });
+  }
+};
+
+app.get('/api/crypto/:symbol/history', handleCryptoHistory);
+app.get('/api/v1/crypto/:symbol/history', handleCryptoHistory);
 
 // ----------------------------------------------------
 // WEBSOCKET REAL-TIME STREAMING (AUTHENTIC UPSTOX FEED)

@@ -325,29 +325,31 @@ export function generateOptionChain(underlying: string, spotPrice: number): Opti
 
     strikes.push({
       strikePrice,
-      isAtm,
-      call: {
-        symbol: `${underlying}24AUG${strikePrice}CE`,
+      isATM: isAtm,
+      calls: {
         ltp: Math.max(5, (spotPrice - strikePrice) + (isAtm ? 180 : 120 - Math.abs(i) * 20)),
         change: 12.4,
         changePercent: 5.6,
-        openInterest: 145000 + (10 - Math.abs(i)) * 12000,
-        changeInOi: 8500,
+        bid: Math.max(4.5, (spotPrice - strikePrice) + (isAtm ? 179 : 119 - Math.abs(i) * 20)),
+        ask: Math.max(5.5, (spotPrice - strikePrice) + (isAtm ? 181 : 121 - Math.abs(i) * 20)),
         volume: 380000,
+        oi: 145000 + (10 - Math.abs(i)) * 12000,
+        changeOI: 8500,
         iv: 14.2 + (Math.abs(i) * 0.3),
         delta: 0.5 - (i * 0.08),
         gamma: 0.004,
         theta: -12.5,
         vega: 8.2,
       },
-      put: {
-        symbol: `${underlying}24AUG${strikePrice}PE`,
+      puts: {
         ltp: Math.max(5, (strikePrice - spotPrice) + (isAtm ? 175 : 115 - Math.abs(i) * 18)),
         change: -8.2,
         changePercent: -4.1,
-        openInterest: 162000 + (10 - Math.abs(i)) * 15000,
-        changeInOi: -4200,
+        bid: Math.max(4.5, (strikePrice - spotPrice) + (isAtm ? 174 : 114 - Math.abs(i) * 18)),
+        ask: Math.max(5.5, (strikePrice - spotPrice) + (isAtm ? 176 : 116 - Math.abs(i) * 18)),
         volume: 410000,
+        oi: 162000 + (10 - Math.abs(i)) * 15000,
+        changeOI: -4200,
         iv: 14.8 + (Math.abs(i) * 0.35),
         delta: -0.5 - (i * 0.08),
         gamma: 0.004,
@@ -358,12 +360,12 @@ export function generateOptionChain(underlying: string, spotPrice: number): Opti
   }
 
   return {
-    underlying,
-    spotPrice,
+    underlyingSymbol: underlying,
+    underlyingPrice: spotPrice,
     expiryDate: '29-AUG-2026',
+    strikes,
     pcr: 1.12,
     maxPain: atmStrike,
-    strikes,
   };
 }
 

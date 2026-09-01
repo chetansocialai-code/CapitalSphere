@@ -1,5 +1,5 @@
-export type MarketStatus = 'OPEN' | 'CLOSED' | 'PRE_MARKET' | 'POST_MARKET';
-export type DataStatus = 'LIVE' | 'DELAYED' | 'MARKET_CLOSED' | 'DATA_UNAVAILABLE';
+export type MarketStatus = 'OPEN' | 'CLOSED' | 'PRE_MARKET' | 'POST_MARKET' | 'LIVE';
+export type DataStatus = 'LIVE' | 'DELAYED' | 'MARKET_CLOSED' | 'DATA_UNAVAILABLE' | 'LIVE_UPSTOX_V3' | 'MONEYCONTROL_VERIFIED';
 
 export interface MarketTicker {
   symbol: string;
