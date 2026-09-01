@@ -681,6 +681,21 @@ app.get('/api/v1/news', async (req, res) => {
   }
 });
 
+// Upstox Manual Instant Refresh Endpoint
+app.get('/api/v1/upstox/refresh', async (req, res) => {
+  try {
+    await syncUpstoxLiveQuotes();
+    res.json({
+      success: true,
+      message: 'Upstox live market quotes synced successfully.',
+      timestamp: new Date().toISOString(),
+      tickers: marketTickers
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: 'Upstox refresh error', message: err.message });
+  }
+});
+
 // Upstox OAuth Login Flow Redirect
 app.get('/api/v1/upstox/login', (req, res) => {
   const authUrl = upstoxClient.getAuthUrl();
