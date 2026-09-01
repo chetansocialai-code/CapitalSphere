@@ -23,9 +23,9 @@ interface CryptoQuote {
 }
 
 const INITIAL_INDEX_ITEMS: IndexQuote[] = [
-  { symbol: 'NIFTY 50', ltp: 24219.05, change: -32.95, changePercent: -0.14, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
-  { symbol: 'SENSEX', ltp: 77369.11, change: -171.72, changePercent: -0.22, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
-  { symbol: 'BANK NIFTY', ltp: 57525.95, change: -236.00, changePercent: -0.41, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+  { symbol: 'NIFTY 50', ltp: 24175.65, change: -32.95, changePercent: -0.14, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+  { symbol: 'SENSEX', ltp: 77264.51, change: -171.72, changePercent: -0.22, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
+  { symbol: 'BANK NIFTY', ltp: 57496.30, change: -236.00, changePercent: -0.41, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
   { symbol: 'NIFTY IT', ltp: 30596.90, change: 64.65, changePercent: 0.21, marketStatus: 'LIVE', dataStatus: 'LIVE_UPSTOX_V3' },
   { symbol: 'NIFTY FIN SERVICE', ltp: 23680.10, change: 145.30, changePercent: 0.62, marketStatus: 'OPEN', dataStatus: 'LIVE' },
   { symbol: 'INDIA VIX', ltp: 13.42, change: -0.48, changePercent: -3.45, marketStatus: 'OPEN', dataStatus: 'LIVE' },
