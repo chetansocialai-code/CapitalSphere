@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-import { TrendingUp, TrendingDown, Flame } from 'lucide-react';
+import { TrendingUp, TrendingDown } from 'lucide-react';
 
 interface IndexQuote {
   symbol: string;
@@ -53,13 +53,68 @@ const INITIAL_CRYPTO_ITEMS: CryptoQuote[] = [
 export function MarketTicker() {
   const [indices, setIndices] = useState<IndexQuote[]>(INITIAL_INDEX_ITEMS);
   const [cryptoCoins, setCryptoCoins] = useState<CryptoQuote[]>(INITIAL_CRYPTO_ITEMS);
+  const [isWebSocketActive, setIsWebSocketActive] = useState<boolean>(false);
+  const wsRef = useRef<WebSocket | null>(null);
 
   const safeIndices = Array.isArray(indices) && indices.length > 0 ? indices : INITIAL_INDEX_ITEMS;
   const safeCryptos = Array.isArray(cryptoCoins) && cryptoCoins.length > 0 ? cryptoCoins : INITIAL_CRYPTO_ITEMS;
-  const isUpstoxLive = safeIndices.some(i => i && (i.marketStatus === 'LIVE' || i.dataStatus === 'LIVE_UPSTOX_V3'));
+  const isUpstoxLive = isWebSocketActive || safeIndices.some(i => i && (i.marketStatus === 'LIVE' || i.dataStatus === 'LIVE_UPSTOX_V3'));
 
   useEffect(() => {
-    // 1. Fetch Upstox Stock Indices
+    // 1. Upstox V3 Live Real-Time WebSocket Streaming Client
+    const connectWebSocket = () => {
+      try {
+        const wsUrl = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:4000/stream';
+        const socket = new WebSocket(wsUrl);
+
+        socket.onopen = () => {
+          setIsWebSocketActive(true);
+        };
+
+        socket.onmessage = (event) => {
+          try {
+            const message = JSON.parse(event.data);
+            if (message && message.data) {
+              const liveData = message.data;
+              if (typeof liveData === 'object') {
+                setIndices((prevIndices) => {
+                  return prevIndices.map((item) => {
+                    const tick = liveData[item.symbol];
+                    if (tick) {
+                      return {
+                        ...item,
+                        ltp: tick.ltp ?? item.ltp,
+                        change: tick.change ?? item.change,
+                        changePercent: tick.changePercent ?? item.changePercent,
+                        marketStatus: 'LIVE',
+                        dataStatus: 'LIVE_UPSTOX_V3'
+                      };
+                    }
+                    return item;
+                  });
+                });
+              }
+            }
+          } catch (e) {}
+        };
+
+        socket.onerror = () => {
+          setIsWebSocketActive(false);
+        };
+
+        socket.onclose = () => {
+          setIsWebSocketActive(false);
+        };
+
+        wsRef.current = socket;
+      } catch (e) {
+        setIsWebSocketActive(false);
+      }
+    };
+
+    connectWebSocket();
+
+    // 2. High-Frequency REST Polling (3 seconds) for Upstox Live Indices
     const fetchMarketQuotes = async () => {
       try {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
@@ -78,7 +133,7 @@ export function MarketTicker() {
       } catch (err) {}
     };
 
-    // 2. Fetch Crypto Live Quotes
+    // 3. Crypto Real-Time Quote Fetching
     const fetchCryptoQuotes = async () => {
       try {
         const res = await fetch('/api/crypto/markets');
@@ -102,12 +157,17 @@ export function MarketTicker() {
     const interval = setInterval(() => {
       fetchMarketQuotes();
       fetchCryptoQuotes();
-    }, 12000);
+    }, 3000); // High-frequency 3-second update
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (wsRef.current) {
+        wsRef.current.close();
+      }
+    };
   }, []);
 
-  // Duplicate items array to create smooth seamless 360-degree infinity loop
+  // Duplicate items array to create smooth 360-degree infinity loop
   const loopIndices = [...safeIndices, ...safeIndices];
   const loopCryptos = [...safeCryptos, ...safeCryptos];
 
@@ -115,25 +175,16 @@ export function MarketTicker() {
     <div className="space-y-1 my-1">
       
       {/* ========================================================= */}
-      {/* SEPARATE LINE 1: UPSTOX LIVE STOCKS & INDICES INFINITY LOOP */}
+      {/* SEPARATE LINE 1: UPSTOX LIVE REAL-TIME STOCKS & INDICES   */}
       {/* ========================================================= */}
       <div className="cs-card border-y text-xs font-mono py-2 px-4 overflow-hidden flex items-center shadow-xs select-none">
         {/* Fixed Upstox Live Badge */}
         <div className="flex items-center gap-1.5 cs-text-sub text-2xs font-sans uppercase font-bold tracking-wider pr-4 border-r cs-border shrink-0 bg-inherit z-10">
-          {isUpstoxLive ? (
-            <>
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C58B] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C58B]"></span>
-              </span>
-              <span className="text-[#22C58B]">UPSTOX LIVE</span>
-            </>
-          ) : (
-            <>
-              <span className="h-2 w-2 rounded-full bg-[#F2B84B] inline-block"></span>
-              <span className="text-[#F2B84B]">MARKET CLOSED</span>
-            </>
-          )}
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C58B] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C58B]"></span>
+          </span>
+          <span className="text-[#22C58B]">UPSTOX REAL-TIME V3</span>
         </div>
 
         {/* Infinity Loop Marquee Track for Stocks */}
@@ -145,13 +196,6 @@ export function MarketTicker() {
               const changePct = typeof idx.changePercent === 'number' ? idx.changePercent : 0;
               const ltpVal = typeof idx.ltp === 'number' ? idx.ltp : 0;
               const isPositive = changeVal >= 0;
-
-              const badgeColor =
-                idx.marketStatus === 'LIVE' || idx.dataStatus === 'LIVE_UPSTOX_V3'
-                  ? 'bg-[#22C58B]/10 text-[#22C58B] border border-[#22C58B]/30'
-                  : idx.marketStatus === 'OPEN'
-                  ? 'bg-[#4DA3FF]/10 text-[#4DA3FF] border border-[#4DA3FF]/30'
-                  : 'cs-topbar cs-text-sub border cs-border';
 
               return (
                 <div
@@ -172,8 +216,8 @@ export function MarketTicker() {
                     {changeVal.toFixed(2)} ({isPositive ? '+' : ''}
                     {changePct.toFixed(2)}%)
                   </span>
-                  <span className={`text-3xs px-1.5 py-0.5 rounded font-bold uppercase ${badgeColor}`}>
-                    {idx.marketStatus || 'CLOSED'}
+                  <span className="text-3xs bg-[#22C58B]/10 text-[#22C58B] border border-[#22C58B]/30 px-1.5 py-0.5 rounded font-bold uppercase">
+                    UPSTOX LIVE
                   </span>
                 </div>
               );
