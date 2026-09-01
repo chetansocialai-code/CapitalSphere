@@ -115,8 +115,6 @@ export function Header() {
           <span className="hidden sm:inline cs-text-sub font-semibold">BRENT CRUDE: <span className="text-white font-bold">$76.40</span> <span className="text-[#F05252]">-0.42%</span></span>
           <span className="hidden md:inline cs-text-sub opacity-40">|</span>
           <span className="hidden md:inline cs-text-sub font-semibold">GOLD (10g): <span className="text-white font-bold">₹72,450</span> <span className="text-[#22C58B]">+0.25%</span></span>
-          <span className="hidden lg:inline cs-text-sub opacity-40">|</span>
-          <span className="hidden lg:inline cs-text-sub font-semibold">BTC/USD: <span className="text-white font-bold">$64,250</span> <span className="text-[#22C58B]">+1.45%</span></span>
         </div>
 
         <div className="flex items-center gap-3 text-2xs font-mono shrink-0">
