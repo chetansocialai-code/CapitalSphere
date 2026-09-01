@@ -142,10 +142,7 @@ export default function CryptoHomepage() {
   const categories = ['All', 'Bitcoin', 'Ethereum', 'Altcoins', 'Blockchain', 'Web3', 'Regulation', 'Markets'];
 
   return (
-    <div className="min-h-screen bg-[#0B0F17] text-slate-100 flex flex-col font-sans selection:bg-[#4DA3FF] selection:text-slate-950">
-      <Header />
-
-      <main className="flex-grow max-w-master mx-auto w-full px-4 py-6 space-y-8">
+    <div className="space-y-8">
         
         {/* Status Notice Banner if Offline */}
         {!isLive && (
@@ -623,10 +620,6 @@ export default function CryptoHomepage() {
             ))}
           </div>
         </section>
-
-      </main>
-
-      <Footer />
     </div>
   );
 }

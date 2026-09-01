@@ -133,30 +133,22 @@ export default function CoinDetailPage({ params }: { params: { symbol: string } 
 
   if (loading && !coin) {
     return (
-      <div className="min-h-screen bg-[#0B0F17] text-slate-100 flex flex-col font-sans">
-        <Header />
-        <main className="flex-grow max-w-master mx-auto w-full px-4 py-12 text-center font-mono cs-text-sub">
-          Loading cryptocurrency market data...
-        </main>
-        <Footer />
+      <div className="py-12 text-center font-mono cs-text-sub">
+        Loading cryptocurrency market data...
       </div>
     );
   }
 
   if (!coin) {
     return (
-      <div className="min-h-screen bg-[#0B0F17] text-slate-100 flex flex-col font-sans">
-        <Header />
-        <main className="flex-grow max-w-master mx-auto w-full px-4 py-12 space-y-4 text-center font-mono">
-          <div className="text-xl font-bold text-rose-400">Cryptocurrency Not Found</div>
-          <p className="text-xs cs-text-sub max-w-md mx-auto">
-            {statusMessage || `We could not locate market telemetry for '${params.symbol}'.`}
-          </p>
-          <Link href="/crypto" className="inline-flex items-center gap-2 bg-[#4DA3FF] text-slate-950 px-4 py-2 rounded-lg font-bold text-xs transition">
-            <ArrowLeft className="w-4 h-4" /> RETURN TO CRYPTO MARKET DASHBOARD
-          </Link>
-        </main>
-        <Footer />
+      <div className="py-12 space-y-4 text-center font-mono">
+        <div className="text-xl font-bold text-rose-400">Cryptocurrency Not Found</div>
+        <p className="text-xs cs-text-sub max-w-md mx-auto">
+          {statusMessage || `We could not locate market telemetry for '${params.symbol}'.`}
+        </p>
+        <Link href="/crypto" className="inline-flex items-center gap-2 bg-[#4DA3FF] text-slate-950 px-4 py-2 rounded-lg font-bold text-xs transition">
+          <ArrowLeft className="w-4 h-4" /> RETURN TO CRYPTO MARKET DASHBOARD
+        </Link>
       </div>
     );
   }
@@ -166,10 +158,7 @@ export default function CoinDetailPage({ params }: { params: { symbol: string } 
   const displayPrice = currency === 'USD' ? coin.price : coin.priceInr;
 
   return (
-    <div className="min-h-screen bg-[#0B0F17] text-slate-100 flex flex-col font-sans selection:bg-[#4DA3FF] selection:text-slate-950">
-      <Header />
-
-      <main className="flex-grow max-w-master mx-auto w-full px-4 py-6 space-y-6">
+    <div className="space-y-6">
         
         {/* Breadcrumb & Navigation */}
         <div className="flex items-center justify-between font-mono text-xs border-b cs-border pb-3">
@@ -363,10 +352,6 @@ export default function CoinDetailPage({ params }: { params: { symbol: string } 
             ))}
           </div>
         </section>
-
-      </main>
-
-      <Footer />
     </div>
   );
 }

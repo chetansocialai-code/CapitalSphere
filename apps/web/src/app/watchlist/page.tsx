@@ -95,10 +95,7 @@ export default function WatchlistPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0F17] text-slate-100 flex flex-col font-sans selection:bg-[#4DA3FF] selection:text-slate-950">
-      <Header />
-
-      <main className="flex-grow max-w-master mx-auto w-full px-4 py-6 space-y-6">
+    <div className="space-y-6">
         
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b cs-border pb-4">
           <div>
@@ -247,10 +244,6 @@ export default function WatchlistPage() {
             </div>
           </section>
         )}
-
-      </main>
-
-      <Footer />
     </div>
   );
 }
